@@ -5,22 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insurance Management System</title>
+    <style>
+        #header {
+            background-color: aqua;
+            width: 100%;
+            height: 60px;
+        }
+
+        #header ul {
+            float: right;
+            height: 60px;
+            margin-top: 20px;
+        }
+
+        #header ul li {
+            display: inline;
+            margin-right: 6px;
+        }
+
+        #header ul li a {
+            text-decoration: none;
+        }
+
+        #image img {
+            height: 450px;
+            width: 100%;
+        }
+
+        #submit {
+            height: 60px;
+            width: 100%;
+        }
+
+        #submit button {
+            float: right;
+            background-color: aqua;
+            margin-left: 5px;
+        }
+
+        #submit button a {
+            text-decoration: none;
+        }
+    </style>
 
 <body>
     <h1> Home</h1>
-    <div>
-        <table>
-            <tr>
-                <td>
-                    <img src="./photos/pic10.jfif" width="100%"; height="100%"; />
-                </td>
-            </tr>
-            <tr>
-                <td><button><a href="./log.html">Login</button></a></td>
-                <td><button><a href="./index.html">cancel</button></a></td>
-            </tr>
-        </table>
+    <div id="header">
+        <ul> <!-- always create menu bar using ul/ol-->
+            <li><a href="./index.html"> Home</a></li>
+            <li><a href="#"> About</a></li>
+            <li><a href="./log.html"> Login</a></li>
+            <li><a href="./policy.html"> Details</a></li>
+            <li><a href="#"> Logout</a></li>
+        </ul>
     </div>
+    <div id="image">
+        <img src="./photos/pic14.jfif" />
+    </div>
+    <div id="submit">
+        <button><a href="./log.html">Login</button></a>
+
+        <button><a href="./index.html">cancel</button></a>
+    </div>
+
 </body>
 
 </html>
