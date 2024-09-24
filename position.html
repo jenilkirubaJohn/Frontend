@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .square{
+        width: 300px;
+        height: 300px;
+        background-color: aqua;
+        transition-duration: 3s;
+        /*transition-property: width;*/
+        transition-timing-function:ease-in;
+        transition-delay: 2s;
+        /*transition-timing-function: ease-in;*/
+    }
+    .square:hover{
+        background-color: blueviolet;
+        /*transform: rotateY(45deg);*/
+        width: 800px;
+    }
+    /*#box {
+        border: 4px solid;
+        width: 180px;
+        height: 180px;
+        font-size: 80px;
+        text-align: center;
+        background-color: white;
+        transform: rotate(180deg);
+    }*/
+</style>
+
 <body>
-    
+    <!--<div id="box">Welcome</div>-->
+    <div class="square"></div>
 </body>
+
 </html>
