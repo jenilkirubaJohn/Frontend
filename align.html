@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Alignment</title>
+</head>
+
+<body>
+    <h2>z-index</h2>
+    <div class="outer">
+        <div class="item1 items"> Item 1</div>
+        <div class="item2 items"> Item 2</div>
+        <div class="item3 items">Item 3</div>
+    </div>
+    <style>
+        .outer {
+            height: 400px;
+            width: 100px;
+            border: 2px solid black;
+            position: absolute;
+            left: 200px;
+        }
+
+        .items {
+            height: 400px;
+            width: 100px;
+            border: 2px solid red;
+            position: relative;
+
+        }
+
+        .item1 {
+            background-color: blue;
+            top: 80px;
+            left: 60px;
+        }
+
+        .item1:hover,
+         {
+            /*z-index: 1;
+            transform: scale(1.5);
+            transform: rotateX(90deg);
+            transform: translate(20px, 40px);*/
+            transform: skewX(20deg);
+        }
+        .item2:hover{
+            z-index: 1;
+            transform: scale(2);
+            background-color: coral;
+            transition-duration: 2s;
+            transition-delay: 1s;
+            /*transition-property: transform;
+            transition-property: background-color;*/
+            transition-timing-function: ease-in;
+        }
+
+        .item2 {
+            background-color: greenyellow;
+            left: 20px;
+            /*z-index: 1;*/
+        }
+
+        .item3 {
+            background-color: orange;
+            bottom: 40px;
+            left: 40px;
+            animation: item3Anim;
+            animation-duration: 5s;
+            animation-iteration-count: ;
+        }
+        @keyframes item3Anim{
+            /*from{
+                transform: translate(20px);
+            }
+            to{
+                transform: translate(40px);
+                }*/
+                0%{
+                    transform: translate(20px);
+                }
+                5%{transform: translate(40px);}
+                25%{transform: translateY(40px);}
+                50%{transform: translateX(10px);}
+                75%{transform: translateX(80px);}
+                85%{transform: translateY(40px);}
+                95%{transform: translatY(40px);}
+                99%{transform: scale(2);}
+        }
+
+    </style>
+</body>
+
+</html>

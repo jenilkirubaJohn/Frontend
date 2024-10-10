@@ -1,3 +1,129 @@
-body{
-    background-color: aqua;
+body,h2 {
+    margin: 0;
+    font-family: Arial;
+}
+
+.landing {
+    background-image: url(./photos/pic18.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /*for full screen*/
+    color: blue;
+}
+
+header a {
+    text-decoration: none;
+    color: red;
+}
+
+header {
+    display: flex;
+    padding: 1em;
+}
+
+#logo {
+    flex: 3;
+    font-size: 1.25em;
+}
+
+nav {
+    flex: 2;
+    display: flex;
+}
+
+nav a {
+    flex: 1;
+}
+
+nav a:hover {
+    color: green;
+}
+
+.maintext {
+    display: flex;
+    flex-direction: column;
+    /*default flex direction is row*/
+    height: 40vh;
+    justify-content: center;
+    /*main axis in vertical position here main axis align we always use justify-content*/
+    padding: 2em;
+}
+
+.tagline1 {
+    color: black;
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+
+.tagline2 {
+    color: yellowgreen;
+}
+
+.maintext div {
+    margin-top: 0.75em;
+}
+
+.maintext button {
+    width: 20vw;
+    margin-top: 2em;
+    padding: 0.7em;
+    background-color: orangered;
+    color: white;
+    border: 1px solid greenyellow;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));/*3rd table min width 320 px that's why we given
+    and it adjust it */
+    background: linear-gradient(to right, rgb(17, 13, 13), rgb(136, 21, 21));
+    color: white;
+
+}
+
+#menuheading,#locheading {
+    display: grid;
+    background: linear-gradient(to right, rgb(17, 13, 13), rgb(136, 21, 21));
+    color: red;
+    font-size: 2.5em;
+    display: flex;
+    justify-content: center;
+
+}
+table{
+    width: 100%;/*when u shrink it in mobile view the table cannot taken full width u check it by inspect it*/
+    padding: 1em;
+}
+.menu tr{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.8em;
+}
+.menu td:nth-child(1)/*it means to items*/
+{
+    flex: 1;
+    justify-self: left;
+}
+.menu td:nth-child(2)/*it means to price*/
+{
+    justify-self: right;
+}
+.main  course{
+    grid-row: span 2;/*it taken 2 rows because it have long paragraph*/
+}
+.locations{
+    background: linear-gradient(to right, rgb(17, 13, 13), rgb(136, 21, 21));
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+.locations h2{
+    color: green;
+    margin-bottom: 0.8em;
+}
+.locations div{
+flex: 1;
+padding: 1em;
+min-width: 220px;/* when u shrink urscreen note that each address line's before going into next line that is 270 width*/
 }
