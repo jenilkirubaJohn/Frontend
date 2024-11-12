@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="container mt-4">
+    <!-- <div class="container mt-4"> 
     <div class="row mt-4">
         <div class="col">variables</div>
         <div class="col">
@@ -21,7 +28,6 @@
 
                 firstname="jenil";
                 age= 31;
-                // AADHAR="4567891";
                 isMajor= true;
                 console.log(firstname);
                 console.log(age);
@@ -35,11 +41,533 @@
 
                 console.log(subject);
                 console.log(mark);
-
-
+            </script>-->
+            <div class="row mt-4">
+                <div class="col">
+                    Document Object<br>
+    
+                    <ol class="txtClr">
+                        <li>getElementById</li>
+                        <li>getElementsByName</li>
+                        <li>getElementsByTagName</li>
+                        <li>getElementsByClassName</li>
+                    </ol>
+                </div>
+                <div class="col">
+                    
+                    <input type="text" class="form-control txtClr" id="user" placeholder="User"/><br>
+                    <input type="password" class="form-control" id="pswd" placeholder="Password"/><br>
+                    <input type="radio" name="gender" value="Male" class="form-check-input"/>Male
+                    <input type="radio" name="gender" value="Female" class="form-check-input"/>Female <br>
+                    <buttun type="button" class="btn btn-primary" onclick="getLgnUser()">Login</buttun>
+    
+                    <style>
+                        .txtClr{
+                            color:red;
+                        }
+                    </style>
+                    <script>
+                    
+                        function getLgnUser(){
+                            let user = document.getElementById('user').value;
+                            let pswd = document.getElementById('pswd').value;
+    
+                            console.log(user + " " + pswd);
+    
+                            console.log(document.getElementsByTagName('input'));
+                            console.log(document.getElementsByClassName('txtClr'));
+                            console.log(document.getElementsByName('gender'));
+                        }
+                    </script>
+                </div>
+            </div>
+    <div class="row mt-4">
+        <div class="col">Calculator</div>
+        <div class="col">
+            <input type="number" name="num1" id="num3" placeholder="Number 1" class="form-control" /><br>
+            <input type="number" name="num2" id="num4" placeholder="Number 2" class="form-control" /><br>
+            <input type="number" id="calcMulDivResult" placeholder="Result" class="form-control" disabled /><br>
+            <p class="calcMulDivResult2"></p><br>
+            <button type="button" class="btn btn-success" onclick="calcMulti()">MULTI</button>
+            <button type="button" class="btn btn-success" onclick="calcDiv()">DIV</button>
+            <script>
+                function calcMulti() {
+                    let num1 = Number(document.getElementById('num3').value);
+                    let num2 = Number(document.getElementById('num4').value);
+                    let result = num1 * num2;
+                    document.getElementById('calcMulDivResult').value = result;
+                }
+    
+                function calcDiv() {
+                    let num1 = Number(document.getElementById('num3').value);
+                    let num2 = Number(document.getElementById('num4').value);
+                    let result = num1 / num2;
+                    document.querySelector('.calcMulDivResult2').innerHTML = "The Result is " + result;
+                }
             </script>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col">Calculator</div>
+        <div class="col">
+            <input type="number" name="num1" id="num1" placeholder="Number 1" class="form-control"/><br>
+            <input type="number" name="num2" id="num2" placeholder="Number 2" class="form-control"/><br>
+            <input type="text" id="calcResult" class="form-control" placeholder="Result" disabled/><br>
+            <p id="calcResult2"></p><br>
+            <button type="button" class="btn btn-success" onclick="calcAdd()">ADD</button>
+            <button type="button" class="btn btn-success" onclick="calcSub()">SUB</button>
+            
+            <script>
+                function calcAdd(){
+                    let num1 = Number(document.getElementById('num1').value);
+                    let num2 = Number(document.getElementById('num2').value);
+                    let result = num1 + num2;
+                    document.getElementById('calcResult').value = result;
+                }
+                function calcSub(){
+                    let num1 = Number(document.getElementById('num1').value);
+                    let num2 = Number(document.getElementById('num2').value);
+                    let result = num1 - num2;
+                    document.getElementById('calcResult2').innerHTML = "The Result is " + result;
+                }
+            </script>
+
+        </div>
+    </div>
+
+    <div class="col">
+        Is Spl Char?
+        <select id="splCdn" class="form-select">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+        <button type="button" class="btn btn-warning" onclick="checkSplCdn()">Check Criteria</button>
+        <p id="splCdnMsg"></p>
+        <script>
+            function checkSplCdn(){
+                let splCdn = document.getElementById('splCdn').value;
+                let age = Number(document.getElementById('ageCdn').value);
+                let result = "";
+                /*
+                AND         OR      NOT
+                0 0 0       0 0 0   0 1
+                0 1 0       0 1 1   1 0
+                1 0 0       1 0 1
+                1 1 1       1 1 1
+
+                */
+                if(splCdn == "Yes" && age > 60){
+                    result = "Senior Citizen with Challenge";
+                }else if( splCdn == "No" && age > 60){
+                    result = "Senior Citizen without Challenge"
+                }else if( splCdn == "Yes"){
+                    result = "With Challenge"
+                }else{
+                    result = "Without Challenge"
+                }
+                document.getElementById('splCdnMsg').innerHTML = result;
+            }
+        </script>
+    </div>
+</div>
+            <div class="row mt-4">
+                <div class="col">Conditions <br>
+                    <ul>
+                        <li>If</li>
+                        <li>If-else</li>
+                        <li>If-else Ladder</li>
+                        <li>Nested If</li>
+                        <li>Switch</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <input type="number" id="ageCdn" name="ageCdn" class="form-control" onkeyup="conditionsEx()" placeholder="Enter the Age"/>
+                    <p id="ageCdResult"></p>
+                    <script>
+                        function conditionsEx() {
+                            let age = Number(document.getElementById('ageCdn').value);
+                            let result = " ";
+                            if (age > 18) {
+                                if (age > 60) {
+                                    result = "Senior citizen";
+                                } else {
+                                    result = "You are Major";
+                                }
+                            } else if (age > 10) {
+                                result = "Minor";
+                            } else if (age > 5) {
+                                result = "Kid";
+                            } else if (age > 0) {
+                                result = "Baby";
+                            } else {
+                                result = "Porakave Illa"; // Make sure this phrase is appropriate and correctly spelled
+                            }
+                            document.getElementById("ageCdResult").innerHTML = result;
+                        }
+                    </script>
+                </div>
             </div>
-            </div>
-            </div>
+            
+            <div class="container mt-4">
+                <div class="row mt-4">
+                    <div class="col">Find the Greatest of 2 numbers</div>
+                    <div class="col">
+                        <input type="number" name="num1" id="num3" placeholder="Number 1" class="form-control" /><br>
+                        <input type="number" name="num2" id="num4" placeholder="Number 2" class="form-control" /><br>
+        
+                        <button class="btn btn-primary" onclick="findGreatestNumber()">Check Greatest Number</button>
+                        <p id="grtResult"></p>
+        
+                        <script>
+        
+                            function findGreatestNumber() {
+                                let num1 = Number(document.getElementById('num3').value);
+                                let num2 = Number(document.getElementById('num4').value);
+                                let result = "";
+        
+                                // Compare the numbers and determine the greatest
+                                if (num1 > num2) {
+                                    result = num1 + " is the greatest number.";
+                                } else if (num2 > num1) {
+                                    result = num2 + " is the greatest number.";
+                                } else {
+                                    result = "Both numbers are equal.";
+                                }
+        
+                                // Display the result
+                                document.getElementById("grtResult").innerText = result;
+        
+                            }
+        
+                        </script>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col">Odd Or Even</div>
+                    <div class="col">
+                        <input type="number" name="num1" id="number" placeholder="Number 1" class="form-control" /><br>
+        
+                        <button class="btn btn-danger" onclick="checkOddEven()">Check</button>
+        
+                        <p id="oeResult"></p>
+        
+                        <script>
+                            function checkOddEven() {
+                                let num1 = Number(document.getElementById("number").value);
+                                // Determine if the number is odd or even
+                                if (num1 % 2 == 0) {
+                                    result = num1 + " is even.";
+                                } else {
+                                    result = num1 + " is odd.";
+                                }
+                                // Display the result
+                                document.getElementById("oeResult").innerText = result;
+                            }
+        
+                        </script>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col">Discount of 10%</div>
+                    <div class="col">
+                        <input type="number" name="billAmount" id="billAmount" placeholder="Number 1"
+                            class="form-control" /><br>
+                        <button class="btn btn-warning" onclick="applyDiscount()">Calculate Final Amount</button>
+                        <p id="disCountResult"></p>
+                        <script>
+                            function applyDiscount() {
+                                let billAmt = Number(document.getElementById('billAmount').value);
+                                let result = "";
+                                if (billAmt > 1000) {
+                                    let discount = billAmt / 10;
+                                    /*
+                                    Rs.100  10%  10Rs
+                                    100/10 = 10Rs
+                
+                                    Rs.200 10% 20Rs
+                                    200/10 = 20Rs
+                
+                                    Rs.351 10% 35Rs
+                                    351/10 = 35Rs
+                                    */
+                                    result = "Bill Amount is " + (billAmt - discount);
+                                } else {
+                                    result = "Bill Amount is " + billAmt;
+                                }
+                                document.getElementById('disCountResult').innerHTML = result;
+                            }
+                        </script>
+                    </div>
+                </div>   
+
+    <div class="row mt-4">
+        <div class="col">vowels</div>
+        <div class="col">
+            <input type="text" id="vowel" name="vowel" class="form-control" placeholder="Enter letter"/>
+            <button type="button" class="btn btn-success" onclick="voweLetter()">ENTER</button>
+            <script>
+                function voweLetter() {
+                    let letter1 = document.getElementById('vowel').value;
+                    let result = "";
+                    switch(letter1) {
+                        case "a":
+                        case "e":
+                        case "i":
+                        case "o":
+                        case "u":
+                        case "A":
+                        case "E":
+                        case "I":
+                        case "O":
+                        case "U":
+                            result = letter1 + " is a vowel";
+                            break;
+                        default:
+                            result = letter1 + " is not a vowel";
+                            break;
+                    }
+                    console.log(result);
+                    alert(result); // This will display the result in an alert box
+                }
+            </script>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col">Positive or Negative</div>
+        <div class="col">
+            <input type="number" id="positive" name="positive" class="form-control" placeholder="Enter number"/>
+            <p id="checkPN"></p>
+            <button type="button" class="btn btn-success" onclick="positiveN()">ENTER</button>
+            <script>
+                function positiveN() {
+                    let numb1 = Number(document.getElementById('positive').value);
+                    let result1 = "";
+                    if (numb1 > 0) {
+                        result1 = "positive";
+                    } else if (numb1 < 0) {
+                        result1 = "negative";
+                    } else {
+                        result1 = "zero";
+                    }
+                    console.log(result1);
+                    document.getElementById("checkPN").innerHTML = result1;
+                }
+            </script>
+        </div>
+    </div>
+    
+            
+
+ <h2>Week Days</h2> 
+
+<p id="demo"></p>
+
+<script>
+let day="sunday";
+// switch (new Date().getDay())
+switch (new Date()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case  6:
+    day = "Saturday";
+}
+document.getElementById("demo").innerHTML = "Today is " + day;
+</script>
+
+
+
+<h2>Year and Month</h2>
+
+<p id="month"></p>
+
+<script>
+let year = new Date().getFullYear();
+let currentMonth = new Date().getMonth();
+let monthName;
+
+switch (currentMonth) {
+  case 0:
+    monthName = "January";
+    break;
+  case 1:
+    monthName = "February";
+    break;
+  case 2:
+    monthName = "March";
+    break;
+  case 3:
+    monthName = "April";
+    break;
+  case 4:
+    monthName = "May";
+    break;
+  case 5:
+    monthName = "June";
+    break;
+  case 6:
+    monthName = "July";
+    break;
+  case 7:
+    monthName = "August";
+    break;
+  case 8:
+    monthName = "September";
+    break;
+  case 9:
+    monthName = "October";
+    break;
+  case 10:
+    monthName = "November";
+    break;
+  case 11:
+    monthName = "December";
+    break;
+  default:
+    monthName = "Invalid Month";
+}
+
+document.getElementById("month").innerHTML = "Today is " + monthName + ", " + year;
+</script>
+
+<div class="row mt-4">
+    <div class="col">Leap Year or Not</div>
+    <div class="col">
+        <input type="number" id="leapyear" name="leapyear" class="form-control" placeholder="Enter year"/>
+        <p id="checkYear"></p>
+        <button type="button" class="btn btn-success" onclick="leapYear()">ENTER</button>
+        <script>
+            function leapYear() {
+                let year = Number(document.getElementById('leapyear').value);
+                let res = "";
+                if ((year % 4 ==0 && year % 100 !==0) || (year % 400 == 0)){
+                    res = "Year is a Leap Year";
+                 
+                } else {
+                    res = "Year is not a Leap Year";
+                }
+                document.getElementById("checkYear").innerHTML = res;
+            }
+        </script>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col"> Rectangle or square</div>
+    <div class="col">
+        <input type="number" id="rectorsqu" name="rectortri" class="form-control" placeholder="Enter length"/>
+        <input type="number" id="rectorsqu1" name="rectortri" class="form-control" placeholder="Enter breadth"/>
+        <p id="checkRs"></p>
+        <button type="button" class="btn btn-success" onclick="checkRectSqu">ENTER</button>
+        <script>
+function checkRectSqu() {
+    // Get length and breadth from the user
+    let length = Number(document.getElementById('rectorsqu').value);
+    let breadth = Number(document.getElementById('rectorsqu1').value);
+    let output2 ="";
+
+    // Convert the input values to numbers
+    // length = parseFloat(length);
+    // breadth = parseFloat(breadth);
+
+    // Check if both length and breadth are valid numbers
+    if (length = breadth ){
+        output2 = "Entered shape is square";
+    }
+else{
+    output2 = "Entered  shape is rectangle ";
+}
+}
+checkRectSqu();
+document.getElementById("checkRs").innerHTML = output2;
+// console.log(final1);
+</script>
+
+<div class="row mt-4">
+    <div class="col"> Rectangle or square</div>
+    <div class="col">
+        <input type="number" id="elecbill" name="elecbill" class="form-control" placeholder="Enter"/>
+        <p id="checkElec"></p>
+        <button type="button" class="btn btn-success" onclick="calculateBill()">ENTER</button>
+        <script>
+function calculateBill(unitsConsumed) {
+    let billAmount = 0;
+    
+    // Slab rates
+    if (unitsConsumed <= 100) {
+        billAmount = unitsConsumed * 0; // Rate for first 100 units
+    } else if (unitsConsumed <= 50) {
+        billAmount = 100 * 0+ (unitsConsumed - 50) * 4; // Rate for next 100 units
+    } else if (unitsConsumed <= 100) {
+        billAmount = 100 * 0 + 50 * 4 + (unitsConsumed - 100) * 7.50; // Rate for next 300 units
+    } else if (unitsConsumed <= 250) {
+        billAmount = 100 * 0 + 50 * 4 + 100 * 7.50 + (unitsConsumed - 250) * 10; // Rate for remaining units
+    }
+
+    
+    // Assuming fixed charges (for meter, maintenance etc.)
+    let fixedCharge = 0.2; // Example fixed charge in dollars
+    
+    // Add fixed charges to the total bill
+    billAmount += fixedCharge;
+    
+    // Return the total bill amount
+    return billAmount.toFixed(2); // Rounded to 2 decimal places
+}
+let unitsConsumed = Number(document.getElementById('elecbill').value);
+unitsConsumed = parseFloat(unitsConsumed); // Convert to number
+
+if (isNaN(unitsConsumed) || unitsConsumed < 0) {
+    console.log("Please enter a valid number for units.");
+} else {
+    let totalBill = calculateBill(unitsConsumed);
+    console.log(`The total electricity bill for ${unitsConsumed} units is: $${totalBill}`);
+
+}
+
+// Example Usage
+let unitsConsumed = prompt("Enter the number of units consumed:");
+
+function checkRectSqu() {
+    // Get length and breadth from the user
+    let unitsConsumed = Number(document.getElementById('elecbill').value);
+    let billAmt ="";
+
+    // Convert the input values to numbers
+    // length = parseFloat(length);
+    // breadth = parseFloat(breadth);
+
+    // Check if both length and breadth are valid numbers
+    if (length = breadth ){
+        output2 = "Entered shape is square";
+    }
+else{
+    output2 = "Entered  shape is rectangle ";
+}
+}
+checkRectSqu();
+document.getElementById("checkRs").innerHTML = output2;
+</script>
 </body>
 </html>
+
+

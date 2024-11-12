@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let firstName = "Ramya";
+        let lastName = "murali";
+        let city = "chennai";
+        console.log(firstName + " " + lastName + " lives in " + city)
+        // template literals concept introduced in 2015 with Egma Script or ESG
+        // bactick ``
+        console.log(`${firstName} ${lastName} lives in ${city}`)
+
+        let msg = `happy
+    birthday`
+        console.log(msg)
+        // single and double quotes in string
+        msg = `cats's name is "toto"`;
+        console.log(msg)
+        let itemCount = 5;
+        let totalPrice = 95;
+        console.log(itemCount);
+        console.log(totalPrice);
+        console.log(`you have ${itemCount} items in your cart.your bill amount is ${totalPrice}`)
+        //  arrays
+        let cities = ["chennai", "madurai", "trichy"];
+        let marks = [78, 56, 37, 58, 72];
+        //  console.log(cities.length)
+        // console.log(marks.length)
+        // console.log(cities[0])
+        // console.log(cities)
+        // last element of arrays
+        // console.log(marks[marks.length(-1)])
+
+        // mix of int and string
+        let arr = [5, 6, 7, "a", "abc", [3, 4]];
+        console.log(arr)
+        console.log(arr[5][1])
+        // 2 dimensional  array
+        let matrix = [[3, 4, 5], [2, 3, 4], [5, 2, 3]];
+        console.log(matrix[1][2])
+        // array methods
+        let array = ["a", "b", "c", "d", "e"]
+        // push add elements to the end
+        array.push("f")
+        console.log(array)
+        // pop remove last elements from end
+        console.log(array.pop())
+        console.log(array)
+        // shift remove elements from the start of the array
+        console.log(array.shift())
+        console.log(array)
+        // unshift add elements to the start of the arrray
+        console.log(array.unshift("a"))
+        console.log(array)
+        // splice for delete elements
+        array.splice(2, 1);
+        console.log(array)
+        //  splice for add give 3rd position
+        array.splice(2, 2, "m");
+        console.log(array)
+
+        // splice for not deletion give 2nd position as zero
+        array.splice(1, 0, "g")
+        console.log(array)
+
+        // slice (starting index,ending index) ending index not included
+        array.slice(1, 2);
+        console.log(array)
+        // unshift add first element at start
+        students = ["Kumar", "Aureen", "Joes", "Zara", "Stanley", "Rajesh"];
+        console.log("before unshift:" + students)
+
+        let len = students.unshift("Tiya");
+        console.log("length:" + len)
+        console.log("After unshift:" + students)
+
+        len = students.unshift("Riya", "Diya");
+        console.log("after unshift:" + students)
+
+        // indexOf to find out name in which index
+        let i = students.indexOf("Joes")
+        console.log("Index:" + i)
+        // indexOf also used in string
+        let user = "Tutor Joes";
+        let index = user.indexOf("o");
+        console.log("index:" + index)
+
+        let indexe = user.indexOf("o", 5);
+        console.log("index:" + indexe)
+        // lastIndexOf last occurence of array and string
+        let stud = students.indexOf("Tiya");
+        console.log("index:" + stud)
+        console.log("index:" + students)
+
+        let stude = students.indexOf("Tiya");
+        console.log("index:" + stude)
+        console.log("index:" + students)
+
+        let aur = students.unshift("tiya");
+        console.log(students)
+
+        let aure = students.unshift("Tiya");
+        console.log(students)
+
+        let au = students.lastIndexOf("Tiya");
+        console.log("last occurence:" + au)
+
+        let str = "Tutor Joes is called by everyone as Joes";
+        console.log(str)
+        let last = str.lastIndexOf("Joes");
+        console.log("index:" + last)
+        // Every and Some in js
+        n = [10, 12, 16, 18];
+
+        let result = n.every((value) => {
+            return value % 2 == 0;
+        });
+        console.log("all elements are even:" + result)
+
+        // some if any one condition true then true
+        n1 = [10, 12, 15, 18];
+
+        let result1 = n1.some((value) => {
+            return value % 2 == 0;
+        });
+        console.log("all elements are even:" + result1)
+
+
+    </script>
+</body>
+
+</html>

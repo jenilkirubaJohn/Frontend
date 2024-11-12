@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Signal</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container"><h1>Traffic Signal</h1></div> 
+
+    <!------Top Side Road------->
+
+    <div class="toproad container mt-5">
+
+        <div class="vertical"></div>
+
+        <div class="dotted"></div>
+
+        <div class="vertical"></div>
+
+        <div class="box1" id="box1"></div>
+
+        <div class="box11"></div>
+
+        <div class="red1"></div>
+
+        <div class="yellow1"></div>
+
+        <div class="green1"></div>
+
+
+    </div>
+
+        <!----left Side Road------>
+
+    <div class="container-fulid row">
+
+        <div class="leftroad col">
+
+            <div class="hori"></div>
+
+            <div class="dot"></div>
+
+            <div class="hori"></div>
+
+            <div class="box3" id="box3"></div>
+
+            <div class="box33" id="box33"></div>
+
+            <div class="red3"></div>
+
+            <div class="yellow3"></div>
+
+            <div class="green3"></div>
+
+        </div>
+
+        <!------right Side Road------>
+
+        <div class="rightroad col">
+
+            <div class="hori1"></div>
+
+            <div class="dot1"></div>
+
+            <div class="hori1"></div>
+
+            <div class="box4" id="box4"></div>
+
+            <div class="box44"></div>
+
+            <div class="red4"></div>
+
+            <div class="yellow4"></div>
+
+            <div class="green4"></div>
+
+        </div>
+
+    </div>
+
+
+    <!------Bottom Side Road------->
+    
+
+    <div class="bottomroad conatainer">
+
+        <div class="vertical1"></div>
+
+        <div class="dotted1"></div>
+
+        <div class="vertical1"></div>
+
+        <div class="box2" id="box2"></div>
+
+        <div class="box22"></div>
+
+        <div class="red2"></div>
+
+        <div class="yellow2"></div>
+
+        <div class="green2"></div>
+
+    </div>
+
+    <div class="switch-fulid">
+
+        <div><button onclick="tops()" class="btn btn-success" id="top">Top Road</button></div>
+
+        <div><button onclick="bottom()" class="btn btn-success" id="bottom">Bottom Road</button></div>
+
+        <div><button onclick="left()" class="btn btn-success" id="left">Left Road</button></div>
+
+        <div><button onclick="right()" class="btn btn-success" id="right">Right Road</button></div>
+
+    </div>
+
+    <style>
+
+        h1{
+
+            text-align: center;
+
+        }
+
+        .toproad{
+
+            display: flex;
+
+            justify-content: center;
+
+        }
+
+        .vertical{
+
+            width:2px;
+
+            height: 300px;
+
+            border: 2px solid;
+
+            margin-right: 5.8%;
+
+            margin-left: 6.4%;
+
+        }
+
+        .box1{
+
+            position: absolute;
+            width: 67.5px;
+            height: 302.5px;
+            margin-left: 8.9px;
+            margin-right: 79.5px;
+            border: 2px black solid;
+            background-color: black;
+        }
+
+        .box11{
+
+            position: absolute;
+            width: 75.5px;
+            height: 303.5px;
+            margin-left: 157px;
+            margin-right: 79.5px;
+            border: 2px black solid;
+            background-color: black;
+
+        }
+
+        .red1{
+            
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            margin-left: -240px;
+            border-radius: 25px;
+            background-color: red;
+        }
+
+        .yellow1{
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            margin-left: -240px;
+            margin-top: 60px;
+            border-radius: 25px;
+            background-color: yellow;
+
+        }
+
+        .green1{
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            margin-left: -240px;
+            margin-top: 123px;
+            border-radius: 25px;
+            background-color: green;
+
+        }
+
+        .dotted{
+
+            width : 2px;
+
+            height: 300px;
+
+            border: 2px dotted;
+
+        }
+
+
+
+        .hori{
+
+            width: 310px;
+
+            height: 2px;
+
+            border: 2px solid;
+
+            margin-left: 254.4px;
+
+            margin-bottom: 9%;
+
+        }
+
+        .box3{
+
+            position: absolute;
+            width: 320px;
+            height: 57.6px;
+            margin-left: 244.7px;
+            margin-top: -115px;
+            border: 2px black solid;
+            background-color: black;
+        }
+
+        .box33{
+
+            position: absolute;
+            width: 320px;
+            height: 57.6px;
+            margin-left: 244.7px;
+            margin-top: -177px;
+            border: 2px black solid;
+            background-color: black;
+
+        }
+
+        .red3{
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            margin-left: 500px;
+            margin-top: -15px;
+            background-color: red;
+
+        }
+
+        .yellow3{
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            margin-left: 435px;
+            margin-top: -15px;
+            background-color: yellow
+        }
+
+        .green3{
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            margin-left: 365px;
+            margin-top: -15px;
+            background-color: green;
+        }
+
+        .dot{
+
+            width: 310px;
+
+            height: 2px;
+
+            border: 2px dotted;
+
+            margin-bottom: 9%;
+
+            margin-left: 254.4px;
+
+        }
+
+
+        .hori1{
+
+            width: 310px;
+
+            height: 2px;
+
+            border: 2px solid;
+
+            margin-left: 61.5px;
+
+            margin-bottom: 9%;
+
+        }
+
+        .box4{
+
+            position: absolute;
+            width: 320px;
+            height: 57.6px;
+            margin-left: 63px;
+            margin-top: -175px;
+            border: 2px black solid;
+            background-color: black;
+
+        }
+
+        .box44{
+
+            position: absolute;
+            width: 320px;
+            height: 57.6px;
+            margin-left: 63px;
+            margin-top: -115px;
+            border: 2px black solid;
+            background-color: black;
+
+        }
+
+        .red4{
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            margin-left: 90px;
+            margin-top: -250px;
+            background-color: red;
+
+        }
+
+        .yellow4{
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            margin-left: 150px;
+            margin-top: -250px;
+            background-color: yellow
+
+        }
+
+        .green4{
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            margin-left: 210px;
+            margin-top: -250px;
+            background-color: green;
+
+        }
+
+        .dot1{
+
+            width: 310px;
+
+            height: 2px;
+
+            border: 2px dotted;
+
+            margin-bottom: 9%;
+
+            margin-left: 67px;
+
+        }
+
+        .bottomroad{
+
+            display: flex;
+
+            justify-content: center;
+
+        }
+
+        .vertical1{
+
+            width:2px;
+
+            height: 300px;
+
+            border: 2px solid;
+
+            margin-right: 4.9%;
+
+            margin-left: 5.6%;
+
+            margin-top: -4.75%;
+
+        }
+
+        .box2{
+
+            position: absolute;
+            width: 75.5px;
+            height: 302.5px;
+            margin-top: -59.7px;
+            margin-left: 77px;
+            border: 2px black solid;
+            background-color: black;
+        }
+
+        .box22{
+
+            position: absolute;
+            width: 65.5px;
+            height: 302.5px;
+            margin-top: -59.7px;
+            margin-left: -69px;
+            border: 2px black solid;
+            background-color: black;
+
+        }
+
+        .red2{
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            margin-left: 240px;
+            border-radius: 25px;
+            background-color: red;
+
+        }
+
+        .yellow2{
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            margin-left: 240px;
+            margin-top: 60px;
+            border-radius: 25px;
+            background-color: yellow;
+
+        }
+
+        .green2{
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            margin-left: 240px;
+            margin-top: 123px;
+            border-radius: 25px;
+            background-color: green;
+
+        }
+
+        .dotted1{
+
+            width : 2px;
+
+            height: 300px;
+
+            border: 2px dotted;
+
+            margin-top: -4.5%;
+
+        }
+
+        button{
+
+            margin-top: 20px;
+
+            margin-left: 20px;
+        }
+
+        #top{
+
+        margin-top: -900px;
+
+        }
+
+        #bottom{
+
+            margin-top: -850px;
+
+        }
+
+        #left{
+
+            margin-top: -800px;
+        }
+
+        #right{
+
+            margin-top: -750px;
+        }
+
+        #main{
+
+            margin-top: -700px;
+        }
+
+    
+    </style>
+
+<script>
+
+    isLightOn = false;
+
+    var toproad = document.getElementById('box1');
+
+    var leftroad = document.getElementById('box3');
+
+    var rightroad = document.getElementById('box4');
+
+    var bottomroad = document.getElementById('box2');
+
+    function tops(){ 
+
+        if(isLightOn == false){
+            toproad.style.backgroundColor = "black";
+
+            leftroad.style.backgroundColor = "green";
+
+rightroad.style.backgroundColor = "green";
+
+bottomroad.style.backgroundColor = "green";
+
+isLightOn = true;
+} 
+else if(isLightOn == true){
+toproad.style.backgroundColor = "black";
+
+leftroad.style.backgroundColor = "black";
+
+rightroad.style.backgroundColor = "black";
+
+bottomroad.style.backgroundColor = "black";
+isLightOn = false;
+}
+}
+
+function bottom(){
+
+if(isLightOn == false){
+toproad.style.backgroundColor = "green";
+
+leftroad.style.backgroundColor = "green";
+
+rightroad.style.backgroundColor = "green";
+
+bottomroad.style.backgroundColor = "black";
+
+isLightOn = true;
+} 
+else if(isLightOn == true){
+toproad.style.backgroundColor = "black";
+
+leftroad.style.backgroundColor = "black";
+
+rightroad.style.backgroundColor = "black";
+
+bottomroad.style.backgroundColor = "black";
+isLightOn = false;
+}
+
+}
+
+function left(){
+
+if(isLightOn == false){
+toproad.style.backgroundColor = "green";
+
+leftroad.style.backgroundColor = "black";
+
+rightroad.style.backgroundColor = "green";
+
+bottomroad.style.backgroundColor = "green";
+
+isLightOn = true;
+} 
+else if(isLightOn == true){
+toproad.style.backgroundColor = "black";
+
+leftroad.style.backgroundColor = "black";
+
+rightroad.style.backgroundColor = "black";
+
+bottomroad.style.backgroundColor = "black";
+isLightOn = false;
+}
+
+}
+
+function right(){
+
+if(isLightOn == false){
+    toproad.style.backgroundColor = "green";
+
+    leftroad.style.backgroundColor = "green";
+
+    rightroad.style.backgroundColor = "black";
+
+    bottomroad.style.backgroundColor = "green";
+
+    isLightOn = true;
+} 
+else if(isLightOn == true){
+    toproad.style.backgroundColor = "black";
+
+    leftroad.style.backgroundColor = "black";
+
+    rightroad.style.backgroundColor = "black";
+
+    bottomroad.style.backgroundColor = "black";
+    isLightOn = false;
+}
+
+}
+
+</script>
+
+
+</body>
+</html>
+     …
