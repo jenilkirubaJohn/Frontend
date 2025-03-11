@@ -256,13 +256,13 @@
                         <script>
                             function checkOddEven() {
                                 let num1 = Number(document.getElementById("number").value);
-                                // Determine if the number is odd or even
+                                
                                 if (num1 % 2 == 0) {
                                     result = num1 + " is even.";
                                 } else {
                                     result = num1 + " is odd.";
                                 }
-                                // Display the result
+                                
                                 document.getElementById("oeResult").innerText = result;
                             }
         
@@ -303,11 +303,13 @@
                     </div>
                 </div>   
 
+    
     <div class="row mt-4">
         <div class="col">vowels</div>
         <div class="col">
             <input type="text" id="vowel" name="vowel" class="form-control" placeholder="Enter letter"/>
             <button type="button" class="btn btn-success" onclick="voweLetter()">ENTER</button>
+            <p id="vowResult"></p> 
             <script>
                 function voweLetter() {
                     let letter1 = document.getElementById('vowel').value;
@@ -329,12 +331,12 @@
                             result = letter1 + " is not a vowel";
                             break;
                     }
-                    console.log(result);
-                    alert(result); // This will display the result in an alert box
+                    document.getElementById("vowResult").innerHTML = "The given letter " + result; 
                 }
             </script>
         </div>
     </div>
+    
     
     <div class="row mt-4">
         <div class="col">Positive or Negative</div>
@@ -342,6 +344,7 @@
             <input type="number" id="positive" name="positive" class="form-control" placeholder="Enter number"/>
             <p id="checkPN"></p>
             <button type="button" class="btn btn-success" onclick="positiveN()">ENTER</button>
+        </div>
             <script>
                 function positiveN() {
                     let numb1 = Number(document.getElementById('positive').value);
@@ -353,108 +356,109 @@
                     } else {
                         result1 = "zero";
                     }
-                    console.log(result1);
+                    // console.log(result1);
                     document.getElementById("checkPN").innerHTML = result1;
                 }
             </script>
-        </div>
+        
     </div>
     
             
+    <div class="row mt-4">
+        <div class="col">Days and Month</div>
+        <div class="col">
+            <input type="text" id="month" name="month" class="form-control" placeholder="Enter Month (1-12)"/>
+            <input type="text" id="year" name="year" class="form-control" placeholder="Enter Year"/>
+            <button type="button" class="btn btn-success" onclick="getDaysInMonth()">ENTER</button>
+            <p id="eDays"></p>
+        </div>
+    <script>
+        function getDaysInMonth() {
+            let monthFun = document.getElementById('month').value;
+            let yearFun = document.getElementById('year').value;
+            let resultDays = new Date(yearFun,monthFun, 0).getDate();
+            // let currentMonth = new Date().getMonth();
+    
+            document.getElementById("eDays").innerText = "The number of days in the month is: " + resultDays;
+        }
+    </script>
+</div>
+    
+<div class="row mt-4">
+    <div class="col">Year and Months</div>
+    <div class="col">
+        <input type="text" id="inputYear" name="year" class="form-control" placeholder="Enter Year"/>
+        <input type="text" id="inputMonth" name="month" class="form-control" placeholder="Enter Month (1-12)"/>
+        <button type="button" class="btn btn-success" onclick="getDaysInMonth()">ENTER</button>
+        <p id="eMonths"></p>
+    </div>
 
- <h2>Week Days</h2> 
-
-<p id="demo"></p>
 
 <script>
-let day="sunday";
-// switch (new Date().getDay())
-switch (new Date()) {
-  case 0:
-    day = "Sunday";
-    break;
-  case 1:
-    day = "Monday";
-    break;
-  case 2:
-    day = "Tuesday";
-    break;
-  case 3:
-    day = "Wednesday";
-    break;
-  case 4:
-    day = "Thursday";
-    break;
-  case 5:
-    day = "Friday";
-    break;
-  case  6:
-    day = "Saturday";
-}
-document.getElementById("demo").innerHTML = "Today is " + day;
+    function getDaysInMonth() {
+        let year = document.getElementById('inputYear').value;
+        let month = document.getElementById('inputMonth').value;
+        let nDays = new Date(year, month, 0).getDate();
+
+        document.getElementById("eMonths").innerHTML = "The number of days in " + month + "/" + year + " is: " + nDays;
+    }
+
+    let currentMonth = new Date().getMonth(); // Note: month is 0-11, while input should be 1-12
+    let year = new Date().getFullYear();
+    let monthName = "";
+
+    switch (currentMonth) {
+      case 0:
+        monthName = "January";
+        break;
+      case 1:
+        monthName = "February";
+        break;
+      case 2:
+        monthName = "March";
+        break;
+      case 3:
+        monthName = "April";
+        break;
+      case 4:
+        monthName = "May";
+        break;
+      case 5:
+        monthName = "June";
+        break;
+      case 6:
+        monthName = "July";
+        break;
+      case 7:
+        monthName = "August";
+        break;
+      case 8:
+        monthName = "September";
+        break;
+      case 9:
+        monthName = "October";
+        break;
+      case 10:
+        monthName = "November";
+        break;
+      case 11:
+        monthName = "December";
+        break;
+      default:
+        monthName = "Invalid Month";
+    }
+
+    document.getElementById("eMonths").innerHTML = "Today is " + monthName + ", " + year;
 </script>
+</div>
 
-
-
-<h2>Year and Month</h2>
-
-<p id="month"></p>
-
-<script>
-let year = new Date().getFullYear();
-let currentMonth = new Date().getMonth();
-let monthName;
-
-switch (currentMonth) {
-  case 0:
-    monthName = "January";
-    break;
-  case 1:
-    monthName = "February";
-    break;
-  case 2:
-    monthName = "March";
-    break;
-  case 3:
-    monthName = "April";
-    break;
-  case 4:
-    monthName = "May";
-    break;
-  case 5:
-    monthName = "June";
-    break;
-  case 6:
-    monthName = "July";
-    break;
-  case 7:
-    monthName = "August";
-    break;
-  case 8:
-    monthName = "September";
-    break;
-  case 9:
-    monthName = "October";
-    break;
-  case 10:
-    monthName = "November";
-    break;
-  case 11:
-    monthName = "December";
-    break;
-  default:
-    monthName = "Invalid Month";
-}
-
-document.getElementById("month").innerHTML = "Today is " + monthName + ", " + year;
-</script>
 
 <div class="row mt-4">
     <div class="col">Leap Year or Not</div>
     <div class="col">
         <input type="number" id="leapyear" name="leapyear" class="form-control" placeholder="Enter year"/>
         <p id="checkYear"></p>
-        <button type="button" class="btn btn-success" onclick="leapYear()">ENTER</button>
+        <button type="button" class="btn btn-success" onclick="leapYear()">ENTER</button></div>
         <script>
             function leapYear() {
                 let year = Number(document.getElementById('leapyear').value);
@@ -469,105 +473,64 @@ document.getElementById("month").innerHTML = "Today is " + monthName + ", " + ye
             }
         </script>
     </div>
-</div>
+
 
 <div class="row mt-4">
-    <div class="col"> Rectangle or square</div>
+    <div class="col">Rectangle or square</div>
     <div class="col">
         <input type="number" id="rectorsqu" name="rectortri" class="form-control" placeholder="Enter length"/>
         <input type="number" id="rectorsqu1" name="rectortri" class="form-control" placeholder="Enter breadth"/>
         <p id="checkRs"></p>
-        <button type="button" class="btn btn-success" onclick="checkRectSqu">ENTER</button>
-        <script>
+        <button type="button" class="btn btn-success" onclick="checkRectSqu()">ENTER</button> <!-- Corrected onclick attribute -->
+    </div>
+
+
+<script>
 function checkRectSqu() {
     // Get length and breadth from the user
     let length = Number(document.getElementById('rectorsqu').value);
     let breadth = Number(document.getElementById('rectorsqu1').value);
     let output2 ="";
 
-    // Convert the input values to numbers
-    // length = parseFloat(length);
-    // breadth = parseFloat(breadth);
-
-    // Check if both length and breadth are valid numbers
-    if (length = breadth ){
+    // Check if length and breadth are equal
+    if (length == breadth) { // Corrected assignment operator
         output2 = "Entered shape is square";
+    } else {
+        output2 = "Entered shape is rectangle";
     }
-else{
-    output2 = "Entered  shape is rectangle ";
-}
-}
-checkRectSqu();
-document.getElementById("checkRs").innerHTML = output2;
-// console.log(final1);
-</script>
 
+    document.getElementById("checkRs").innerHTML = output2; // Moved inside function
+}
+</script>
+</div>
 <div class="row mt-4">
-    <div class="col"> Rectangle or square</div>
+    <div class="col">Electricity Bill</div>
     <div class="col">
-        <input type="number" id="elecbill" name="elecbill" class="form-control" placeholder="Enter"/>
+        <input type="number" id="elecbill" name="elecbill" class="form-control" placeholder="Enter units"/>
         <p id="checkElec"></p>
         <button type="button" class="btn btn-success" onclick="calculateBill()">ENTER</button>
-        <script>
-function calculateBill(unitsConsumed) {
+    </div>
+</div>
+
+<script>
+function calculateBill() {
+    let units = Number(document.getElementById('elecbill').value); 
+    let sCharge = 0.02;
     let billAmount = 0;
-    
+
     // Slab rates
-    if (unitsConsumed <= 100) {
-        billAmount = unitsConsumed * 0; // Rate for first 100 units
-    } else if (unitsConsumed <= 50) {
-        billAmount = 100 * 0+ (unitsConsumed - 50) * 4; // Rate for next 100 units
-    } else if (unitsConsumed <= 100) {
-        billAmount = 100 * 0 + 50 * 4 + (unitsConsumed - 100) * 7.50; // Rate for next 300 units
-    } else if (unitsConsumed <= 250) {
-        billAmount = 100 * 0 + 50 * 4 + 100 * 7.50 + (unitsConsumed - 250) * 10; // Rate for remaining units
+    if (units <= 100) {
+        billAmount = units * 0 + sCharge; // Rate for first 100 units
+    } else if (units <= 200) {
+        billAmount = (100 * 0) + ((units - 100) * 4) + sCharge; // Rate for next 100 units
+    } else if (units <= 300) {
+        billAmount = (100 * 0) + (100 * 4) + ((units - 200) * 7.50) + sCharge; // Rate for next 100 units
+    } else {
+        billAmount = (100 * 0) + (100 * 4) + (100 * 7.50) + ((units - 300) * 10) + sCharge; // Rate for units above 300
     }
 
-    
-    // Assuming fixed charges (for meter, maintenance etc.)
-    let fixedCharge = 0.2; // Example fixed charge in dollars
-    
-    // Add fixed charges to the total bill
-    billAmount += fixedCharge;
-    
-    // Return the total bill amount
-    return billAmount.toFixed(2); // Rounded to 2 decimal places
+    document.getElementById("checkElec").innerHTML = "The bill amount is: ₹" + billAmount.toFixed(2); // Displaying two decimal points
 }
-let unitsConsumed = Number(document.getElementById('elecbill').value);
-unitsConsumed = parseFloat(unitsConsumed); // Convert to number
-
-if (isNaN(unitsConsumed) || unitsConsumed < 0) {
-    console.log("Please enter a valid number for units.");
-} else {
-    let totalBill = calculateBill(unitsConsumed);
-    console.log(`The total electricity bill for ${unitsConsumed} units is: $${totalBill}`);
-
-}
-
-// Example Usage
-let unitsConsumed = prompt("Enter the number of units consumed:");
-
-function checkRectSqu() {
-    // Get length and breadth from the user
-    let unitsConsumed = Number(document.getElementById('elecbill').value);
-    let billAmt ="";
-
-    // Convert the input values to numbers
-    // length = parseFloat(length);
-    // breadth = parseFloat(breadth);
-
-    // Check if both length and breadth are valid numbers
-    if (length = breadth ){
-        output2 = "Entered shape is square";
-    }
-else{
-    output2 = "Entered  shape is rectangle ";
-}
-}
-checkRectSqu();
-document.getElementById("checkRs").innerHTML = output2;
 </script>
 </body>
 </html>
-
-
