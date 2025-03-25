@@ -11,29 +11,54 @@
         crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container mt-4">
-    <h2>Array Functions</h2>
-    <p id="arrOp"> </p>
-</div>
     <script>
-        function arrFunc(){
-            let students=["krishna","keerthana","akash","pranav","fedrick","akash"];
-            let arrOp="";
-            console.log(students);
-            arrOp +="Array :"+students+"br";
-            arrOp +="Length :"+students.length+"br";
-            arrOp +="Array :"+students+"br";
-            arrOp +="Array :"+students+"br";
-            arrOp +="Array :"+students+"br";
-            arrOp +="Array :"+students+"br";
-            arrOp +="Array :"+students+"br";
-            arrOp +="Array :"+students+"br";
-            arrOp +="Array :"+students+"br";
-            arrOp +="Array :"+students+"br";
-            arrOp +="Array :"+students+"br";
-            document.getElementById('arrOp').innerHTML=arrOp;
+        let arrVar=["a","b","c","d","e"];
+        function arrPush(arrVar,ele){
+            arrVar[arrVar.length]=ele;
+            return arrVar.length;
         }
-arrFunc();
+        let arrTot = arrPush(arrVar,"2");
+        console.log(arrTot);
+        console.log(arrVar);
+    //     <body>
+    // <script>
+    //     let arrVar = ["a", "b", "c", "d", "e"];
+    //     function arrPop(arrVar) {
+    //         if (arrVar.length === 0) {
+    //             return undefined; // Return undefined if the array is empty
+    //         }
+    //         let removedElement = arrVar[arrVar.length - 1]; // Get the last element
+    //         arrVar.length -= 1; // Reduce the array length to remove the element
+    //         return removedElement; // Return the removed element
+    //     }
+    //     let poppedElement = arrPop(arrVar); // Remove the last element
+    //     console.log(poppedElement); // Logs the removed element
+    //     console.log(arrVar);        // Logs the updated array
+//     <body>
+//     <script>
+//         function customIncludes(array, element) {
+//             for (let i = 0; i < array.length; i++) {
+//                 if (array[i] === element) {
+//                     return true; // Element found, return true
+//                 }
+//             }
+//             return false; // Element not found, return false
+//         }
+
+//         let arr = ["apple", "banana", "cherry"];
+//         let searchElement = "banana";
+
+//         let result = customIncludes(arr, searchElement);
+//         console.log(result); // Logs true if "banana" is found, otherwise false
+//     </script>
+// </body>
+
+    </script>
+</body>
+
+    </script>
+</body>
+
     </script>
 </body>
 </html>
