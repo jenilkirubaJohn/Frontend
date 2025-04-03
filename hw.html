@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>                                                                                                         
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>String Functions</h2>
+    <p id="strOp"></p>
+</div>
+<script>
+let str = "Hi Hello How are you";
+function startWith(str, srEle){
+      
+
+        console.log("Str StartWith: "+ srEle);
+
+        for(let idx=0; idx < str.length; idx++){
+            if(str[idx] == srEle){
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    console.log(startWith(str, 'H' ));
+    console.log(startWith(str, "Hi"));
+//endsWith
+    function endsWith(str, srEle){
+      
+
+      console.log("Str EndstWith: "+ srEle);
+
+      for(let idx=str.length-1; idx >= 0; idx--){
+          if(str[idx] == srEle){
+              return true;
+          }
+      }
+      return false;
+
+  }
+
+  console.log(endsWith(str," Hi" ));
+  console.log(endsWith(str, 'u'));
+
+  //repeat
+  function repeat(str,times){
+    let result=   "";
+    for (let i=0;i<times;i++){
+        result +=str;
+    }
+    return result;
+
+  }
+  console.log(repeat(str,3));
+ //replace
+  function replace(str,srele,replacement){
+    return str.replace(srele,replacement);
+    
+    }
+  console.log(replace(str,"Hello","Vanakkam"));
+  
+//charAt
+function charAt(str,srele){
+for(let idx=0; idx < str.length; idx++){
+            if(str[idx] == srEle){
+                return idx;
+            }
+
+}
+return -1
+}
+console.log(charAt(str, "H"));
+
+
+//slice
+function slice(str,start,end){
+    let tempArr=   "";
+    for (let i=start;i<end;i++){
+        console.log(str[i]);
+        tempArr[tempArr.length] = str [i];
+    }
+    return tempArr;
+
+  }
+  console.log(slice(str,3,6));
+
+
+
+</script>
+</body>
+</html>

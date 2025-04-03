@@ -12,53 +12,243 @@
 </head>
 <body>
     <script>
-        let arrVar=["a","b","c","d","e"];
-        function arrPush(arrVar,ele){
-            arrVar[arrVar.length]=ele;
-            return arrVar.length;
-        }
-        let arrTot = arrPush(arrVar,"2");
-        console.log(arrTot);
-        console.log(arrVar);
-    //     <body>
-    // <script>
-    //     let arrVar = ["a", "b", "c", "d", "e"];
-    //     function arrPop(arrVar) {
-    //         if (arrVar.length === 0) {
-    //             return undefined; // Return undefined if the array is empty
-    //         }
-    //         let removedElement = arrVar[arrVar.length - 1]; // Get the last element
-    //         arrVar.length -= 1; // Reduce the array length to remove the element
-    //         return removedElement; // Return the removed element
-    //     }
-    //     let poppedElement = arrPop(arrVar); // Remove the last element
-    //     console.log(poppedElement); // Logs the removed element
-    //     console.log(arrVar);        // Logs the updated array
-//     <body>
-//     <script>
-//         function customIncludes(array, element) {
-//             for (let i = 0; i < array.length; i++) {
-//                 if (array[i] === element) {
-//                     return true; // Element found, return true
-//                 }
+
+        // let arr = [10,20,30,40,20,70];
+        // function push(arr, ele){
+
+        //     console.log("Before Push : " + arr);
+        //     arr[ arr.length ] = ele;
+        //     console.log("After Push : " + arr);
+        //     return arr.length;
+        // }
+        // console.log(push(arr, 60));
+
+        // function pop(arr){
+
+        //     console.log("Before Pop : "+ arr);
+        //     let removedEle = arr[arr.length-1];
+        //     arr.length = arr.length-1;
+        //     console.log("After Pop : "+ arr);
+        //     return removedEle;
+        // }
+
+        // console.log(pop(arr));
+
+        // function includes(arr, srEle){
+        //     console.log("Arr Includes : "+ arr);
+
+        //     for(let idx=0; idx < arr.length; idx++){
+        //         if(arr[idx] == srEle){
+        //             return true;
+        //         }
+        //     }
+        //     return false;
+
+        // }
+
+        // console.log(includes(arr, 30));
+        // console.log(includes(arr, 100));
+
+        // function indexOf(arr, srEle){
+        //     console.log("Arr Index Of: "+ arr);
+        //     for(let idx=0; idx < arr.length; idx++){
+        //         if(arr[idx] == srEle){
+        //             return idx;
+        //         }
+        //     }
+        //     return -1;
+        // }
+
+        // console.log(indexOf(arr, 20));
+        // console.log(indexOf(arr, 200));
+
+        // function lastIndexOf(arr, srEle){
+        //     console.log("Arr Last Index Of: "+ arr);
+        //     for(let idx=arr.length-1; idx >= 0; idx--){
+        //         if(arr[idx] == srEle){
+        //             return idx;
+        //         }
+        //     }
+        //     return -1;
+        // }
+        // console.log(lastIndexOf(arr, 20));
+        // console.log(lastIndexOf(arr, 200));
+
+        // function reverse(arr){
+        //     console.log("Arr Before Reverse : "+ arr);
+        //     let newArr = [];
+        //     for(let idx=arr.length-1; idx >= 0; idx--){
+        //         console.log(arr[idx]);
+        //         newArr[ newArr.length ] = arr[idx];
+        //     }
+        //     console.log(newArr);
+        //     arr = newArr;
+        //     console.log("Arr After Reverse : "+ arr);
+        // }
+        // reverse(arr);
+    
+        // function shift(arr){
+        //     console.log("Before shift; "+arr);
+        //     let removedEle=arr[arr.length-6];
+        //     arr.length=arr.length-6;
+        //  console.log("After shift; "+removedEle);
+        //  return removedEle;
+           
+        //         }
+        //         console.log( arr1=[10,3,5,6,7,8];
+        arr1=[10,3,5,6,7,8]
+        function unshift(arr1,ele){
+           let tempArr=[ele];
+            tempArr[0]=ele;
+            for(let idx=0;idx<arr1.length;idx++){
+               console.log(arr1[idx]);
+       tempArr[tempArr.length]=arr1[idx];
+            }
+            arr1=tempArr;
+            return arr1;
+      } 
+      console.log(unshift(arr1,30));
+
+      arr1=[10,3,5,6,7,8]
+        function shift(arr1){
+           let tempArr=[];//put here all elements from array1
+            for(let idx=1;idx<arr1.length;idx++){
+               console.log(arr1[idx]);
+       tempArr[tempArr.length]=arr1[idx];
+            }
+            arr1=tempArr;
+            return arr1;
+      } 
+      console.log(shift(arr1));
+        
+        // aa(arr1);
+//         function sort(arr) {
+//     let temp = 0; 
+//     for (let idx = 0; idx < arr.length; idx++) {
+//         for (let jdx = idx + 1; jdx < arr.length; jdx++) {
+//             if (arr[idx] > arr[jdx]) { // Change condition for ascending order
+//                 temp = arr[idx];
+//                 arr[idx] = arr[jdx];
+//                 arr[jdx] = temp;
 //             }
-//             return false; // Element not found, return false
 //         }
+//     }
+//     return arr; 
+// }
 
-//         let arr = ["apple", "banana", "cherry"];
-//         let searchElement = "banana";
+// console.log("Sorted Array:", sort(arr)); 
+// function fill(arr)
+// {
+//             console.log("Before Fill: "+ arr);
+//             for(let idx=1; idx<arr.length-2; idx++){
+//                 arr[idx]="fgfsagfgs";
+//             }
+//             console.log("After Fill: "+arr);
+//             return arr;
+//         }
+//         console.log(fill(arr));
 
-//         let result = customIncludes(arr, searchElement);
-//         console.log(result); // Logs true if "banana" is found, otherwise false
-//     </script>
-// </body>
+//         function Slice(arr, ele1,ele2){
 
-    </script>
-</body>
+// console.log("Before Slice : " + arr);
+// arr[ arr.length ] = ele1;
+// arr[ arr.length-3] = ele2;
+// console.log("After Slice : " + arr);
+// return arr.length;
+// }
+// console.log(Slice(arr, 60));
+function slice(arr1,st,end){
+    let tempArr=[];
+    for(let idx=st;idx<end;idx++){
+               console.log(arr1[idx]);
+       tempArr[tempArr.length]=arr1[idx];
+            }
+            return tempArr;
+}
+console.log(slice(arr1,2,5));
 
-    </script>
-</body>
 
-    </script>
+function fill(arr1,ele,st,end){
+    for(let idx=st;idx<end;idx++){
+               console.log(arr1[idx]);
+                 arr1[idx]=ele;
+
+            }
+            return arr1;
+}
+console.log(fill(arr1,"ffff",2,5));
+
+function join(arr2,arr3){
+   let tempArr=[];
+    for(let idx=0;idx<arr2.length;idx++){
+               console.log(arr2[idx]);
+               tempArr[tempArr.length]=arr2[idx];
+
+            }
+            for(let idx=0;idx<arr3.length;idx++){
+               console.log(arr3[idx]);
+               tempArr[tempArr.length]=arr3[idx];
+
+            }
+            return tempArr;
+}
+console.log(join([4,8,9,12],[5,7,9,10,9,6,10]));
+
+// function toString(arr2,arr3){
+//    let tempArr;
+//     for(let idx=0;idx<arr2.length;idx++){
+//                console.log(arr2[idx]);
+//                tempArr[tempArr.length]=arr2[idx];
+
+//             }
+//             for(let idx=0;idx<arr3.length;idx++){
+//                console.log(arr3[idx]);
+//                tempArr[tempArr.length]=arr3[idx];
+
+//             }
+//             let stringRes="";
+//             for(let i=0;i<tempArr.length;i++){
+              
+//               stringRes+=tempArr[i];
+//               if(i<tempArr.length-1){
+//                 stringRes=".";
+//               }
+
+//             }
+//             return stringRes;
+// }
+// console.log(toString([4,8,9,12,8,5,9],[5,7,9,10,9,6,10]));
+
+
+
+let arrDim = [[10, 20, 30], [40, 10, 60], [40, 50, 70]];
+
+function findIn2DArray(arrDim, value) {
+    for (let idx = 0; idx < arrDim.length; idx++) {
+        if (arrDim[idx].indexOf(value) !== -1) { 
+            return { row: idx, column: arrDim[idx].indexOf(value) };
+        }
+    }
+    return null; 
+
+console.log(findIn2DArray(arrDim, 40));
+
+let arrDim1 = [[10, 20, 30], [40, 10, 60], [40, 50, 70]];
+
+// Function to flatten the 2D array into a 1D array
+function neutralizeArr(arrDim1) {
+    let tempArr = [];
+    for (let idx = 0; idx < arrDim1.length; idx++) { 
+        for (let jdx = 0; jdx < arrDim1[idx].length; jdx++) { 
+            tempArr[tempArr.length] = arrDim1[idx][jdx]; // Add elements to tempArr
+        }
+    }
+    return tempArr; // Return the flattened array
+}
+
+// Log the result to the console
+console.log(neutralizeArr(arrDim1));
+</script>
+
 </body>
 </html>
