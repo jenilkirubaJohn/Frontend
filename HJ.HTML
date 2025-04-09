@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking</title>
+    <style>
+        .srow {
+            margin: 5px;
+            padding: 10px;
+            background-color: lightgray;
+            border: none;
+            cursor: pointer;
+        }
+        .srow:disabled {
+            background-color: green;
+            color: white;
+            cursor: not-allowed;
+        }
+        #inputContainer {
+            margin-top: 20px;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bus Ticket Booking</h1>
+    <div id="row1">
+        <button onclick="selectSeat('Seat01', this)" class="srow" id="rs1">Seat01</button>
+        <button onclick="selectSeat('Seat02', this)" class="srow" id="rs2">Seat02</button>
+        <button onclick="selectSeat('Seat03', this)" class="srow" id="rs3">Seat03</button>
+    </div>
+
+    <script>
+        // Object to store seat booking details
+        let seats = {};
+
+        // Function to handle seat selection
+        function selectSeat(seatNum, button) {
+            // Check if the input fields already exist
+            if (!document.getElementById('inputContainer')) {
+                // Create a container for input fields and buttons
+                const inputContainer = document.createElement('div');
+                inputContainer.id = 'inputContainer';
+
+                // Create input field for name
+                const nameInput = document.createElement('input');
+                nameInput.type = 'text';
+                nameInput.id = 'nameInput';
+                nameInput.placeholder = 'Enter Name';
+                inputContainer.appendChild(nameInput);
+
+                // Create input field for phone number
+                const phoneInput = document.createElement('input');
+                phoneInput.type = 'text';
+                phoneInput.id = 'phoneInput';
+                phoneInput.placeholder = 'Enter Phone Number';
+                inputContainer.appendChild(phoneInput);
+
+                // Create Book button
+                const bookButton = document.createElement('button');
+                bookButton.textContent = 'Book';
+                bookButton.onclick = function () {
+                    bookSeat(seatNum, nameInput.value, phoneInput.value, button);
+                    document.body.removeChild(inputContainer);
+                };
+                inputContainer.appendChild(bookButton);
+
+                // Create Cancel button
+                const cancelButton = document.createElement('button');
+                cancelButton.textContent = 'Cancel';
+                cancelButton.onclick = function () {
+                    cancelSeat(seatNum, button);
+                    document.body.removeChild(inputContainer);
+                };
+                inputContainer.appendChild(cancelButton);
+
+                // Append the container to the body
+                document.body.appendChild(inputContainer);
+            }
+        }
+
+        // Function to book a seat
+        function bookSeat(seatNum, userName, phoneNum, button) {
+            if (userName && phoneNum) {
+                seats[seatNum] = { userName, phoneNum }; // Store booking details
+                alert(`${seatNum} is booked for ${userName}`);
+                button.style.backgroundColor = 'green'; // Change seat color to green
+                button.disabled = true; // Disable button after booking
+            } else {
+                alert('Please enter both name and phone number.');
+            }
+        }
+
+        // Function to cancel a seat
+        function cancelSeat(seatNum, button) {
+            if (seats[seatNum]) {
+                delete seats[seatNum]; // Remove booking details
+                alert(`${seatNum} booking has been canceled.`);
+                button.style.backgroundColor = 'lightgray'; // Reset seat color
+                button.disabled = false; // Enable button after cancellation
+            } else {
+                alert('This seat is not booked yet.');
+            }
+        }
+    </script>
+</body>
+</html>

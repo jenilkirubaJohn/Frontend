@@ -11,178 +11,127 @@
         <link rel="stylesheet" href="E:\bahvya\tbook.css">
 
     <title>TICKET BOOKING</title>
+    
 </head>
 <body>
-    <!-- <input type="button" value="Edit" onClick="compute(edit(document.getElementById('new').value))" /> -->
-    <!-- function edit()
-{
-     x = document.getElementById('new').value;
-     //use this X.
-} -->
-    <div class="maindiv" class="mt-4">
-    <div  class="mt-4"id="header">
-        
-           <div class="mt-4" id="top1" > <button class="aseat" id="cseat" onclick="showInputFields()"> Available Seats</button></div>
-           <div class="mt-4" id="top1"> <button class="aseat" id="bseat" onclick="bookTicket()"> Booked  Seats</button></div>
-           <div class="mt-4" id="top1"> <button class="aseat" id="cseat" onclick="cancelledTicket()"> cancelled  Seats</button></div>
-    </div>
-    <div class="inner"  id="innerDiv">
-        <label for="name">Enter your name:</label>
-        <input type="text" id="name" placeholder="Enter Your Name" required><br><br>
-        
-        <label for="phone">Enter phone number:</label>
-        <input type="number" id="phone" placeholder="Enter Your Phone Number" required><br><br>
-    </div>
+    
+    <h1>BUS TICKET BOOKING</h1>
+ <div class="maindiv" class="mt-4">
+
    
     <div class="mt-4" id="row1">
-        
-        <button onclick=""class="srow1" id="rs1">Seat01</button>
-        <button class="srow1" id="rs2">Seat02</button>
-        <button class="srow1" id="rs3">Seat03</button>
-        <button class="srow1" id="rs4">Seat04</button>
-        <button class="srow1" id="rs5">Seat05</button>
-        <button class="srow1" id="rs6">Seat06</button>
+        <!-- <button class="btn btn-warning" onclick="cancelSeat('seat01', this)" id="cancel01">Cancel Seat01</button> -->
+
+        <button class="btn btn-danger" onclick="selectSeat('seat01',this)" class="srow" id="rs1">Seat01</button>
+        <button class="btn btn-danger" onclick="selectSeat('seat02',this)" class="srow" id="rs2">Seat02</button>
+        <button class="btn btn-danger" onclick="selectSeat('seat03',this)" class="srow" id="rs3">Seat03</button>
+        <button class="btn btn-danger" onclick="selectSeat('seat04',this)" class="srow" id="rs4">Seat04</button>
+        <button class="btn btn-danger" onclick="selectSeat('seat05',this)"  class="srow" id="rs5">Seat05</button>
+        <button class="btn btn-danger" onclick="selectSeat('seat06',this)" class="srow" id="rs6">Seat06</button>
 </div>
 <div class="mt-4" id="row2">
-    <button class="srow2" id="rs7">Seat07</button>
-    <button class="srow2" id="rs8">Seat08</button>
-    <button class="srow2" id="rs9">Seat09</button>
-    <button class="srow2" id="rs10">Seat10</button>
-    <button class="srow2" id="rs11">Seat11</button>
-    <button class="srow2" id="rs12">Seat12</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat07',this)" class="srow" id="rs7">Seat07</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat08',this)" class="srow" id="rs8">Seat08</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat09',this)" class="srow" id="rs9">Seat09</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat10',this)" class="srow" id="rs10">Seat10</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat11',this)" class="srow" id="rs11">Seat11</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat12',this)" class="srow" id="rs12">Seat12</button>
 </div>
 <div class="mt-4" id="row3">
-    <button class="srow3" id="rs13">Seat13</button>
-    <button class="srow3" id="rs14">Seat14</button>
-    <button class="srow3" id="rs15">Seat15</button>
-    <button class="srow3" id="rs16">Seat16</button>
-    <button class="srow3" id="rs17">Seat17</button>
-    <button class="srow3" id="rs18">Seat18</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat13',this)" class="srow" id="rs13">Seat13</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat14',this)" class="srow" id="rs14">Seat14</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat15',this)" class="srow" id="rs15">Seat15</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat16',this)" class="srow" id="rs16">Seat16</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat17',this)" class="srow" id="rs17">Seat17</button>
+    <button class="btn btn-danger" onclick="selectSeat('seat18',this)" class="srow" id="rs18">Seat18</button>
 </div>
 <div class="mt-4" id="row4">
-    <button class="srow4" id="rs19">Seat19</button>
-    <button class="srow4" id="rs20">Seat20</button>
-    <button class="srow4" id="rs21">Seat21</button>
-    <button class="srow4" id="rs22">Seat22</button>
-    <button class="srow4" id="rs23">Seat23</button>
-    <button class="srow4" id="rs24">Seat24</button>
+    <button  class="btn btn-danger" onclick="selectSeat('seat19',this)" class="srow" id="rs19">Seat19</button>
+    <button  class="btn btn-danger" onclick="selectSeat('seat20',this)" class="srow" id="rs20">Seat20</button>
+    <button  class="btn btn-danger" onclick="selectSeat('seat21',this)" class="srow" id="rs21">Seat21</button>
+    <button  class="btn btn-danger" onclick="selectSeat('seat22',this)" class="srow" id="rs22">Seat22</button>
+    <button  class="btn btn-danger" onclick="selectSeat('seat23',this)" class="srow" id="rs23">Seat23</button>
+    <button  class="btn btn-danger" onclick="selectSeat('seat24',this)" class="srow" id="rs24">Seat24</button>
+
 </div>
 </div>
 <script>
-   function addNumPhone(){
-    let phoneNum=document.getElementById('name').value;
-    let nameText=document.getElementById('phone').value;
-   }
-  let arrName = []; 
-let arrPhoneNum = []; 
+   let seats = {};
+        function selectSeat(seatNum, button) {
+    if (seats[seatNum]) {
+       
+        const verifyDiv = document.createElement('div');
+        verifyDiv.id = 'verifyDiv';
 
-function showInputFields() {
-    const innerDiv = document.getElementById("innerDiv");
+        const verifyName = document.createElement('input');
+        verifyName.type = 'text';
+        verifyName.placeholder = 'Enter Name';
+        verifyDiv.appendChild(verifyName);
 
-    
-    innerDiv.innerHTML = "";
+        const verifyPhone = document.createElement('input');
+        verifyPhone.type = 'number';
+        verifyPhone.placeholder = 'Enter Phone No';
+        verifyDiv.appendChild(verifyPhone);
 
-    
-    const phoneInput = document.createElement("input");
-    phoneInput.type = "number";
-    phoneInput.id = "phone";
-    phoneInput.placeholder = "Enter Your Phone Number";
-    phoneInput.required = true;
+        const verifyButton = document.createElement('button');
+        verifyButton.textContent = 'cancel';
+        verifyButton.onclick = function () {
+            const seatDetails = seats[seatNum];
+            if (seatDetails.userName === verifyName.value && seatDetails.phoneNum === verifyPhone.value) {
+                delete seats[seatNum];
+                alert(`The booking for ${seatNum} has been cancelled.`);
+                button.style.backgroundColor = 'red'; // Change back to not booked style
+                button.textContent = seatNum; // Reset button text
+                document.body.removeChild(verifyDiv);
+            } else {
+                alert('Verification failed! Name or Phone Number does not match.');
+            }
+        };
+        verifyDiv.appendChild(verifyButton);
 
-   
-    const nameInput = document.createElement("input");
-    nameInput.type = "text";
-    nameInput.id = "name";
-    nameInput.placeholder = "Enter Your Name";
-    nameInput.required = true;
+        document.body.appendChild(verifyDiv);
+    } else {
+        
+        if (!document.getElementById('inputDiv')) {
+            const inputDiv = document.createElement('div');
+            inputDiv.id = 'inputDiv';
 
-    
-    innerDiv.appendChild(phoneInput);
-    innerDiv.appendChild(document.createElement("br"));
-    innerDiv.appendChild(nameInput);
-    innerDiv.appendChild(document.createElement("br")); 
+            const name = document.createElement('input');
+            name.type = 'text';
+            name.placeholder = 'Enter Name';
+            inputDiv.appendChild(name);
 
-    // Create the "Book" button
-    const bookButton = document.createElement("button");
-    bookButton.id = "bookButton";
-    bookButton.className = "btn btn-success";
-    bookButton.innerText = "Book";
-    bookButton.onclick = bookTicket;
+            const phoneNum = document.createElement('input');
+            phoneNum.type = 'number';
+            phoneNum.placeholder = 'Enter Phone No';
+            inputDiv.appendChild(phoneNum);
 
-    // Create the "Cancel" button
-    const cancelButton = document.createElement("button");
-    cancelButton.id = "cancelButton";
-    cancelButton.className = "btn btn-danger";
-    cancelButton.innerText = "Cancel";
-    cancelButton.onclick = cancelledTicket; // Clear input fields
-
-    // Append buttons to the container
-    innerDiv.appendChild(bookButton);
-    innerDiv.appendChild(cancelButton);
-}
-
-function bookTicket() {
-    const phone = document.getElementById("phone").value;
-    const name = document.getElementById("name").value;
-
-    if (!phone || !name) {
-        alert("Please fill out both fields!");
-        return;
-    }
-
-    // Add user input to arrays
-    arrName.push(name);
-    arrPhoneNum.push(phone);
-
-    // Update seat buttons dynamically
-    for (let i = 0; i < arrName.length; i++) {
-        const seatButton = document.getElementById(`rs${i + 1}`);
-        if (seatButton) {
-            seatButton.innerText = `${arrName[i]} - ${arrPhoneNum[i]}`;
-            seatButton.className = "btn btn-success"; // Indicate booking visually
+            const bookButton = document.createElement('button');
+            bookButton.textContent = 'Book';
+            bookButton.onclick = function () {
+                if (name.value && phoneNum.value) {
+                    seats[seatNum] = { userName: name.value, phoneNum: phoneNum.value };
+                    alert(`${seatNum} is booked successfully for ${name.value}.`);
+                    button.style.backgroundColor = 'green'; // Change to booked style
+                    button.textContent = `${seatNum}`; // Update button text
+                    document.body.removeChild(inputDiv);
+                } else {
+                    alert('Enter both name and phone number.');
+                }
+            };
+            inputDiv.appendChild(bookButton);
+            document.body.appendChild(inputDiv);
         }
     }
-
-    alert(`Ticket booked successfully!\nName: ${name}\nPhone: ${phone}`);
-
-    // Clear input fields for new data entry
-    document.getElementById("phone").value = "";
-    document.getElementById("name").value = "";
 }
-function cancelledTicket() {
-    const phone = document.getElementById("phone").value;
-    const name = document.getElementById("name").value;
-
-    if (!phone || !name) {
-        alert("Please fill out both fields!");
-        return;
-    }
-
-    // Add user input to arrays
-    arrName.pop(name);
-    arrPhoneNum.pop(phone);
-
-    // Update seat buttons dynamically
-    for (let i = 0; i < arrName.length; i++) {
-        const seatButton = document.getElementById(`rs${i + 1}`);
-        if (seatButton) {
-            seatButton.innerText = `${arrName[i]} - ${arrPhoneNum[i]}`;
-            seatButton.className = "btn btn-danger"; // Indicate booking visually
-        }
-    }
-
-    alert(`Ticket cancelled successfully!\nName: ${name}\nPhone: ${phone}`);
-
-    // Clear input fields for new data entry
-    document.getElementById("phone").value = "";
-    document.getElementById("name").value = "";
-}
-
-function findTickets() {
-    showInputFields(); // Reuse the dynamic input creation logic
-}
-
-
+    
 </script>
 </body>
 </html>
+
+    
+
+
+
+
+    

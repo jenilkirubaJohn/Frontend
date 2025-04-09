@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking</title>
+    <style>
+        .maindiv {
+            height: 700px;
+            width: 750px;
+            background-color: aqua;
+        }
+        .aseat, .srow {
+            background-color: red;
+            margin: 20px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #row1, #row2, #row3, #row4 {
+            margin-left: 55px;
+        }
+        .srow:disabled {
+            background-color: green;
+            color: white;
+            cursor: not-allowed;
+        }
+        #inputDiv {
+            margin-top: 20px;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BUS TICKET BOOKING</h1>
+    <div class="maindiv">
+        <div id="header">
+            <button class="aseat" id="aseat">Available Seats</button>
+            <button class="aseat" id="bseat">Booked Seats</button>
+            <button class="aseat" id="cseat">Cancelled Seats</button>
+        </div>
+        <div id="row1">
+            <button onclick="getSeatNo('seat01', this)" class="srow" id="rs1">Seat01</button>
+            <button onclick="getSeatNo('seat02', this)" class="srow" id="rs2">Seat02</button>
+            <button onclick="getSeatNo('seat03', this)" class="srow" id="rs3">Seat03</button>
+        </div>
+    </div>
+
+    <script>
+        // Object to store booking information
+        let seats = {};
+
+        // Function to handle seat selection
+        function getSeatNo(seatNum, button) {
+            if (!document.getElementById('inputDiv')) {
+                const inputDiv = document.createElement('div');
+                inputDiv.id = 'inputDiv';
+
+                const name = document.createElement('input');
+                name.type = 'text';
+                name.id = 'namediv';
+                name.placeholder = 'Enter Name';
+                inputDiv.appendChild(name);
+
+                const phoneNum = document.createElement('input');
+                phoneNum.type = 'number';
+                phoneNum.id = 'phonediv';
+                phoneNum.placeholder = 'Enter Phone No';
+                inputDiv.appendChild(phoneNum);
+
+                const bookButton = document.createElement('button');
+                bookButton.textContent = 'Book';
+                bookButton.onclick = function () {
+                    bookSeat(seatNum, name.value, phoneNum.value, button);
+                    document.body.removeChild(inputDiv);
+                };
+                inputDiv.appendChild(bookButton);
+
+                const cancelButton = document.createElement('button');
+                cancelButton.textContent = 'Cancel Booking';
+                cancelButton.onclick = function () {
+                    cancelSeat(seatNum, button);
+                    document.body.removeChild(inputDiv);
+                };
+                inputDiv.appendChild(cancelButton);
+
+                document.body.appendChild(inputDiv);
+            }
+        }
+
+        // Function to book a seat
+        function bookSeat(seatNum, userName, phoneNum, button) {
+            if (userName && phoneNum) {
+                seats[seatNum] = { userName, phoneNum }; // Store booking details
+                alert(`${seatNum} is booked for ${userName}`);
+                button.style.backgroundColor = 'green'; // Change seat color to green
+                button.disabled = true; // Disable button after booking
+            } else {
+                alert('Please enter both name and phone number.');
+            }
+        }
+
+        // Function to cancel a seat
+        function cancelSeat(seatNum, button) {
+            if (seats[seatNum]) {
+                delete seats[seatNum]; // Remove booking details
+                alert(`${seatNum} booking has been canceled.`);
+                button.style.backgroundColor = 'red'; // Reset seat color
+                button.disabled = false; // Enable button after cancellation
+            } else {
+                alert('This seat is not booked yet.');
+            }
+        }
+    </script>
+</body>
+</html>

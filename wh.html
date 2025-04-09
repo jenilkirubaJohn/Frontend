@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking</title>
+    <style>
+        .maindiv {
+            height: 200px;
+            width: 450px;
+            background-color: aqua;
+        }
+        .srow {
+            background-color: red;
+            margin: 20px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #row1, #row2, #row3, #row4 {
+            margin-left: 55px;
+        }
+        .srow:disabled {
+            background-color: green;
+            color: white;
+            cursor: not-allowed;
+        }
+        #inputDiv {
+            margin-top: 20px;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BUS TICKET BOOKING</h1>
+    <div class="maindiv">
+        <!-- <div id="header">
+            <button class="aseat" id="aseat">Available Seats</button>
+            <button class="aseat" id="bseat">Booked Seats</button>
+            <button class="aseat" id="cseat">Cancelled Seats</button>
+        </div> -->
+        <div id="row1">
+            <button onclick="toggleSeat('Seat01', this)" class="srow" id="rs1">Seat01</button>
+            <button onclick="toggleSeat('Seat02', this)" class="srow" id="rs2">Seat02</button>
+            <button onclick="toggleSeat('Seat03', this)" class="srow" id="rs3">Seat03</button>
+        </div>
+    </div>
+    <script>
+        let seats = {};
+        function toggleSeat(seatNum, button) {
+    if (seats[seatNum]) {
+        // Seat is already booked; verify user details for cancellation
+        const verifyDiv = document.createElement('div');
+        verifyDiv.id = 'verifyDiv';
+
+        const verifyName = document.createElement('input');
+        verifyName.type = 'text';
+        verifyName.placeholder = 'Enter Name';
+        verifyDiv.appendChild(verifyName);
+
+        const verifyPhone = document.createElement('input');
+        verifyPhone.type = 'number';
+        verifyPhone.placeholder = 'Enter Phone No';
+        verifyDiv.appendChild(verifyPhone);
+
+        const verifyButton = document.createElement('button');
+        verifyButton.textContent = 'cancel';
+        verifyButton.onclick = function () {
+            const seatDetails = seats[seatNum];
+            if (seatDetails.userName === verifyName.value && seatDetails.phoneNum === verifyPhone.value) {
+                delete seats[seatNum];
+                alert(`The booking for ${seatNum} has been cancelled.`);
+                button.style.backgroundColor = 'green'; // Change back to "not booked" style
+                button.textContent = seatNum; // Reset button text
+                document.body.removeChild(verifyDiv);
+            } else {
+                alert('Verification failed! Name or Phone Number does not match.');
+            }
+        };
+        verifyDiv.appendChild(verifyButton);
+
+        // const cancelButton = document.createElement('button');
+        // cancelButton.textContent = 'Cancel';
+        // cancelButton.onclick = function () {
+        //     document.body.removeChild(verifyDiv);
+        // };
+        // verifyDiv.appendChild(cancelButton);
+
+        document.body.appendChild(verifyDiv);
+    } else {
+        // Seat is not booked; proceed with booking
+        if (!document.getElementById('inputDiv')) {
+            const inputDiv = document.createElement('div');
+            inputDiv.id = 'inputDiv';
+
+            const name = document.createElement('input');
+            name.type = 'text';
+            name.placeholder = 'Enter Name';
+            inputDiv.appendChild(name);
+
+            const phoneNum = document.createElement('input');
+            phoneNum.type = 'number';
+            phoneNum.placeholder = 'Enter Phone No';
+            inputDiv.appendChild(phoneNum);
+
+            const bookButton = document.createElement('button');
+            bookButton.textContent = 'Book';
+            bookButton.onclick = function () {
+                if (name.value && phoneNum.value) {
+                    seats[seatNum] = { userName: name.value, phoneNum: phoneNum.value };
+                    alert(`${seatNum} is booked successfully for ${name.value}.`);
+                    button.style.backgroundColor = 'green'; // Change to "booked" style
+                    button.textContent = `${seatNum}`; // Update button text
+                    document.body.removeChild(inputDiv);
+                } else {
+                    alert('Enter both name and phone number.');
+                }
+            };
+            inputDiv.appendChild(bookButton);
+
+            // const cancelButton = document.createElement('button');
+            // cancelButton.textContent = 'Cancel';
+            // cancelButton.onclick = function () {
+            //     document.body.removeChild(inputDiv);
+            // };
+            // inputDiv.appendChild(cancelButton);
+
+            document.body.appendChild(inputDiv);
+        }
+    }
+}
+
+    
+</script>
+</body>
+</html>
+<!-- <script>
+    // Object to store booking information
+    let seats = {};
+
+    // Function to handle seat selection
+    function getSeatNo(seatNum, button) {
+        if (!document.getElementById('inputDiv')) {
+            const inputDiv = document.createElement('div');
+            inputDiv.id = 'inputDiv';
+
+            const name = document.createElement('input');
+            name.type = 'text';
+            name.id = 'namediv';
+            name.placeholder = 'Enter Name';
+            inputDiv.appendChild(name);
+
+            const phoneNum = document.createElement('input');
+            phoneNum.type = 'number';
+            phoneNum.id = 'phonediv';
+            phoneNum.placeholder = 'Enter Phone No';
+            inputDiv.appendChild(phoneNum);
+
+            const bookButton = document.createElement('button');
+            bookButton.textContent = 'Book';
+            bookButton.onclick = function () {
+                bookSeat(seatNum, name.value, phoneNum.value, button);
+                document.body.removeChild(inputDiv);
+            };
+            inputDiv.appendChild(bookButton);
+
+            const cancelButton = document.createElement('button');
+            cancelButton.textContent = 'Cancel';
+            cancelButton.onclick = function () {
+                document.body.removeChild(inputDiv);
+            };
+            inputDiv.appendChild(cancelButton);
+
+            document.body.appendChild(inputDiv);
+        }
+    }
+
+    // Function to book a seat
+    function bookSeat(seatNum, userName, phoneNum, button) {
+        if (userName && phoneNum) {
+            seats[seatNum] = { userName, phoneNum }; // Store booking details
+            alert(`${seatNum} is booked successfully for ${userName}.`);
+            button.style.backgroundColor = 'green'; // Change seat color to green
+            button.disabled = true; // Disable the button
+        } else {
+            alert('Please provide both name and phone number.');
+        }
+    }
+
+    // Function to cancel a seat
+    function cancelSeat(seatNum, button) {
+        if (seats[seatNum]) {
+            delete seats[seatNum]; // Remove booking details
+            alert(`The booking for ${seatNum} has been cancelled.`);
+            button.style.backgroundColor = 'red'; // Reset the button color
+            button.disabled = false; // Enable the button
+        } else {
+            alert('This seat is not booked yet.');
+        }
+    }
+</script> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 1</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+    
+            .container {
+                display: block;
+                text-align: center;
+                margin-top: 20px;
+            }
+    
+            .input-field {
+                width: 200px;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin: 10px auto;
+            }
+    
+            .add-button {
+                padding: 8px 20px;
+                background-color: green;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h3>Using DOM Manipulation</h3>
+        <div class="container">
+            <button class="add-button" onclick="addFn()">Add Input Field</button>
+            <div id="inputFields"></div>
+        </div>
+        <script>
+            function addFn() {
+                const divEle = document.getElementById("inputFields");
+                const wrapper = document.createElement("div");
+                const iFeild = document.createElement("input");
+                iFeild.setAttribute("type", "text");
+                iFeild.setAttribute("placeholder", "Enter value");
+                iFeild.classList.add("input-field");
+                wrapper.appendChild(iFeild);
+                divEle.appendChild(wrapper);
+            }
+        </script>
+    </body>
+    
+    </html> -->
