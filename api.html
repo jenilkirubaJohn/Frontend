@@ -2,10 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" con                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              tent="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
 </head>
 <body>
+
+    <div class="container mt-4">
+
+        <h2>Billing</h2>
+        <div class="row mt-4">
+            <div class="col">ProductId</div>
+            <div class="col">ProductName</div>
+            <div class="col">Price</div>
+            <div class="col">Count</div>
+            <div class="col">Total</div>
+            <div class="col">Action</div>
+        </div>
+        <div class="row mt-4">
+            <div class="col"> <input type="text" id="pId" name="pId" class="form-control"/></div>
+            <div class="col"> <input type="text" id="pName" name="pName" class="form-control"/></div>
+            <div class="col"> <input type="text" id="pPrice" name="pPrice" class="form-control"/></div>
+            <div class="col"> <input type="text" id="pCount" name="pCount" class="form-control"/></div>
+            <div class="col"> <input type="text" id="pTotal" name="pTotal" class="form-control"/></div>
+            <div class="col"> <button type="button" class="btn btn-success">Add Product</button></div>
+        </div>
+        <!-- <div class="row mt-4">
+            <div class="col">1001</div>
+            <div class="col">Ice</div>
+            <div class="col">60</div>
+            <div class="col">2</div>
+            <div class="col">120</div>
+            <div class="col"><button type="button" class="btn btn-warning">Update</button></div>
+        </div> -->
+        <div id="cartData">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+        </div>
+
+    </div>
+    <script>
+
+        var cartData=[];
+
+        function getCartData(){
+
+            let apiUrl = "https://retoolapi.dev/6Z2MWv/productsCart";
+            fetch(apiUrl)
+            .then(response => { 
+                console.log(response);
+                return response.json();
+            })
+            .then(responseData => {
+                console.log(responseData);
+                cartData = responseData;
+                displayCartData();
+            })
+        }
+        getCartData();
+
+        function displayCartData(){
+
+            let result = "";
+            for(let product of cartData){
+                result += '<div class="row mt-4">' +
+                                '<div class="col">' + product.pId + '</div>' +
+                                '<div class="col">' + product.pName + '</div>' +
+                                '<div class="col">' + product.pPrice + '</div>' +
+                                '<div class="col">' + product.pCount + '</div>' +
+                                '<div class="col">' + product.pTotal + '</div>' +
+                                '<div class="col"> <button type="button" class="btn btn-warning"> Update</button></div>' +
+                          '</div>';
+            }
+            document.getElementById('cartData').innerHTML= result;
+        }
+    </script>
     
 </body>
 </html>

@@ -5,45 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insurance Management System</title>
+    <script src="https://kit.fontawesome.com/dd7cfdc45a.js" crossorigin="anonymous"></script>
     <style>
         body {
-            background-image: url("photos/pic25.jpg");
+            background-image: url("photos/pic32.jpg");
+    
+
         }
 
         h1 {
-            color: aqua;
+            color: #9d0208;
             text-align: center;
+            font-size: 35px;
         }
-
-        #header {
-            background-color: palevioletred;
-            width: 100%;
-            height: 60px;
-        }
-
+.contact{
+    float: right;
+    color: #450920;
+    font-size: 23px;
+}
+.contact i{
+    color: #450920;
+}
         #header ul {
-            float: right;
-            height: 60px;
-            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
         }
 
         #header ul li {
 
             display: inline;
             margin-right: 6px;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: #081c15;
         }
 
         #header ul li a {
             font-size: 21px;
-            color: burlywood;
+            color: #e76f51;
             text-decoration: none;
         }
+        #header ul :hover {
+background-color: #9bc53d;
 
+        }
         /* #image img { 
             height: 450px;
             width: 100%;
         }*/
-
+#header ul i{
+    color: #b7094c;
+}
         #submit {
             height: 10px;
             width: 100%;
@@ -52,40 +64,48 @@
 
         #submit button {
             float: right;
-            background-color: palevioletred;
+            background-color: #5b8e7d;
             font-size: 16px;
-            height: 25px;
+            height: 35px;
             width: 65px;
             padding: 5px;
             margin-top: 350px;
             margin-left: 30px;
             border-radius: 5px;
+            cursor: pointer;
         }
 
         #submit button a {
             text-decoration: none;
         }
+        #submit button :hover{
+            background-color: #588157;
+        }
     </style>
 
 <body>
-    <h1> Home</h1>
+   
+    <h1>Insurance Management System</h1>
+   <p class="contact"> <i class="fa-solid fa-phone"></i> Contact us @ 2345678 | 9123456780</p>
     <div id="header">
         <ul> <!-- always create menu bar using ul/ol-->
-            <li><a href="./index.html"> Home</a></li>
-            <li><a href="#"> About</a></li>
-            <li><a href="./log.html"> Login</a></li>
-            <li><a href="./policy.html"> Details</a></li>
-            <li><a href="#"> Logout</a></li>
+            <li><i class="fa-solid fa-house"></i><a href="./index.html"> Home</a></li>
+
+            <li><i class="fa-solid fa-user-plus"></i><a href="./log.html"> Login</a></li>
+            <li><i class="fa-solid fa-envelope-open-text"></i><a href="#"> Signup</a></li>
+            <li><i class="fa-solid fa-circle-user"></i><a href="./policy.html"> Details</a></li>
+            <li><i class="fa-solid fa-person-circle-exclamation"></i><a href="#"> Logout</a></li>
         </ul>
     </div>
-    <!-- <div id="image"> 
-        <img src="./photos/pic14.jfif" />
-    </div>-->
+    
     <div id="submit">
-        <button><a href="./log.html">Login</button></a>
+        <a href="./log.html"><button>Login</button></a>
 
-        <button><a href="./index.html">cancel</button></a>
+
+        <a href="./index.html"><button>Cancel</button></a>
+
     </div>
+
 
 </body>
 

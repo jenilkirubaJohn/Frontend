@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>LOGIN</h1>
+    <h1>SIGNUP</h1>
     <form action="./policy.html" method="get">
         <div class="form">
             <table>
@@ -54,6 +54,9 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>Select Profile</td>
+                    <td><input type="file" name="file"></td>
+                </tr>
                     <td>Address</td>
                     <td>
                         <textarea name="address" cols="5" rows="5" required></textarea>
@@ -75,32 +78,39 @@
                     <td><input type="text" name="user" required />
                     </td>
                 </tr>
-                <tr>
+                <tr></br>
                     <td>
                         <!-- <button><a href="./policy.html">submit</a></button> -->
-                        <button type="submit">Submit</button>
+                        <button class="but" type="submit">Submit</button>
                         <!-- <button type="reset">Cancel</button>  reset type button refresh the added values-->
-                        <button><a href="./index.html">cancel</a></button>
+                        <button class="but"><a href="./index.html">cancel</a></button>
                     </td>
                 </tr>
             </table>
     </form>
     <style>
         body {
-            background-image: url("photos/pic27.jpg");
+            background-image: url("photos/pic37.jpg");
 
             /* background-image:url("../photos/pic21.jpg") */
         }
 
         h1 {
             text-align: center;
-            color: #601A3E;
+            color: #03045e;
         }
 
         .form {
             margin-left: 40px;
-            color: #79305a;
-            font-size: 20px;
+            color: #001219;
+            font-size: 25px;
         }
+        .but{
+           float: right;
+            background-color: #bb3e03;
+        }
+button a{
+    text-decoration: none;
+}    
     </style>
 </body>
