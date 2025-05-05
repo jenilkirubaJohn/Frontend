@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+         body {
+            background-image: url("photos/pic41.jpg");
+        }
+
+        h1{
+            text-align: center;
+            margin-top: 150px;
+            font-size: 38px;
+            color: #250902;
+        }
+        .form{
+            margin-left: 375px;
+            font-size: 28px;
+            color: #132a13;
+        }
+        .mail,.pword{
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .mail:hover,.pword:hover{
+            background-color: #adc178;
+        }
+       button{
+        float: right;
+        margin-right: 500px;
+        font-size: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: #132a13;
+       }
+       button:hover{
+        background-color: #adc178;
+       }
+       p{
+        margin-left: 300px;
+        font-size: 24px;
+       }
+    </style>
+
+</head>
+<body>
+    <h1>LOGIN</h1>
+    <form id="login" action="./policy.html" method="get">
+        <div class="form">
+            <table>
+                <tr>
+                    <td><label for="mail">Enter Your Email:</td></label>
+                    <td><input type="email" class="mail" name="user" id="mail" required></td>
+                </tr>
+                <tr>
+                    <td><label for="pword">Enter Password:</td></label>
+                    <td><input type="password" class="pword" name="user" id="pword" required></td>
+                </tr>
+                <tr>
+                    <td><label for="pword"> Confirm Password:</td></label>
+                    <td><input type="password" class="pword" name="user" id="cpword" required></td>
+                   </tr>
+                 </table>
+            </div>
+            </form>
+            <div> <p id="checkP"></p></div>
+            <div><button onclick="cpassword()">Submit</button></div>
+            <script>
+function cpassword(){
+    let pCheck = document.getElementById("pword").value;
+    let cCheck = document.getElementById("cpword").value;
+    let checkPara = document.getElementById("checkP");
+    let formCheck = document.getElementById("login");
+    if(pCheck == cCheck){
+        document.getElementById("checkP").innerHTML= "Password created successfully";
+        checkPara.style.color = "green";
+        formCheck.submit()
+    }
+    else{
+document.getElementById("checkP").innerHTML= "Password didnot match";
+checkPara.style.color = "red";
+    }
+}
+            </script>
+</body>
+</html>
