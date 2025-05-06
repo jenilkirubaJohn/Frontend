@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insurance Management System</title>
-    <script src="https://kit.fontawesome.com/dd7cfdc45a.js" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/dd7cfdc45a.js" crossorigin="anonymous"></script>
     <style>
         body {
             background-image: url("./photos/pic32.jpg");
@@ -16,14 +16,17 @@
             text-align: center;
             font-size: 35px;
         }
-.contact{
-    float: right;
-    color: #450920;
-    font-size: 23px;
-}
-.contact i{
-    color: #450920;
-}
+
+        .contact {
+            float: right;
+            color: #450920;
+            font-size: 23px;
+        }
+
+        .contact i {
+            color: #450920;
+        }
+
         #header ul {
             display: flex;
             flex-direction: row;
@@ -43,17 +46,20 @@
             color: #e76f51;
             text-decoration: none;
         }
+
         #header ul :hover {
-background-color: #9bc53d;
+            background-color: #9bc53d;
 
         }
+
         /* #image img { 
             height: 450px;
             width: 100%;
         }*/
-#header ul i{
-    color: #b7094c;
-}
+        #header ul i {
+            color: #b7094c;
+        }
+
         #submit {
             height: 10px;
             width: 100%;
@@ -76,26 +82,27 @@ background-color: #9bc53d;
         #submit button a {
             text-decoration: none;
         }
-         #submit button:hover{    /*don't leave spacing before hover*/
+
+        #submit button:hover {
+            /*don't leave spacing before hover*/
             background-color: #f07167;
         }
     </style>
 
 <body>
-   
+
     <h1>Insurance Management System</h1>
-   <p class="contact"> <i class="fa-solid fa-phone"></i> Contact us @ 2345678 | 9123456780</p>
+    <p class="contact"> <i class="fa-solid fa-phone"></i> Contact us @ 2345678 | 9123456780</p>
     <div id="header">
         <ul> <!-- always create menu bar using ul/ol-->
             <li><i class="fa-solid fa-house"></i><a href="./index.html"> Home</a></li>
-
-            <li><i class="fa-solid fa-user-plus"></i><a href="./log.html"> Login</a></li>
-            <li><i class="fa-solid fa-envelope-open-text"></i><a href="#"> Signup</a></li>
-            <li><i class="fa-solid fa-circle-user"></i><a href="./policy.html"> Details</a></li>
+            <li><i class="fa-solid fa-envelope-open-text"></i><a href="./log.html"> Signup</a></li>
+            <li><i class="fa-solid fa-user-plus"></i><a href="./login.html"> Login</a></li>
+            <li><i class="fa-solid fa-circle-user"></i><a href="./policyDetails.html"> Details</a></li>
             <li><i class="fa-solid fa-person-circle-exclamation"></i><a href="#"> Logout</a></li>
         </ul>
     </div>
-    
+
     <div id="submit">
         <a href="./log.html"><button>Login</button></a>
 
