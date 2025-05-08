@@ -22,10 +22,10 @@
             color: #001219;
             font-size: 15px;
         }
-      
-        .but button{
-           float: right;
-           margin-right: 100px;
+
+        .but button {
+            float: right;
+            margin-right: 100px;
             font-size: 15px;
             border-radius: 5px;
             background-color: #6c584c;
@@ -34,37 +34,61 @@
             margin-bottom: 50px;
             cursor: pointer;
         }
-button a{
-    text-decoration: none;
-}    
-.but :hover{
-    background-color: green;
-}    
-.name,.dob,.number,.email,.file,.sign, input{
-height: 25px;
-width: 190px;
-border-radius: 10px;
-cursor: pointer;
-}
-.name:hover,.dob:hover,.number:hover,.email:hover,
-.file:hover,.sign:hover{
-    background-color: #a8dadc;
-}
-p{
-    margin-left: 250px;
-}
 
+        button a {
+            text-decoration: none;
+        }
+
+        .but :hover {
+            background-color: green;
+        }
+
+        .name,
+        .dob,
+        .password,
+        .number,
+        .email,
+        .file,
+        .sign,
+        input {
+            height: 25px;
+            width: 190px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .name:hover,
+        .dob:hover,
+        .password:hover,
+        .number:hover,
+        .email:hover,
+        .file:hover,
+        .sign:hover {
+            background-color: #a8dadc;
+        }
+
+        p {
+            margin-left: 250px;
+        }
     </style>
 </head>
 
 <body>
     <h1>SIGNUP</h1>
-    <form action="./login.html" method="get">
+    <form action="#" method="get">
         <div class="form">
             <table>
                 <tr>
                     <td>Name:</td>
-                    <td><input type="text" class="name" name="user" required></td>
+                    <td><input type="text" class="name" id="name" name="user" required></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" class="password" id="password" name="user" required></td>
+                </tr>
+                <tr>
+                    <td>Email Id:</td>
+                    <td><input type="email" class="email" id="email" name="user" required></td>
                 </tr>
                 <tr>
                     <td> Date Of Birth:</td>
@@ -86,10 +110,6 @@ p{
                     <td><input type="number" class="number" name="account" required></td>
                 </tr>
                 <tr>
-                    <td>Email Id:</td><!--type="color","search","tel"-->
-                    <td><input type="email" class="email" name="email" required></td>
-                </tr>
-                <tr>
                     <td>Identification Proof:</td>
                     <td><input type="checkbox" name="proof" class="proof" value="dl" required />Driving License
                         <input type="checkbox" name="proof" class="proof" value="ac" required />Aadhar Card
@@ -107,10 +127,10 @@ p{
                     <td>Select Profile</td>
                     <td><input type="file" class="file" name="file"></td>
                 </tr>
-                    <td>Address</td>
-                    <td>
-                        <textarea name="address" cols="5" rows="5" required></textarea>
-                    </td>
+                <td>Address</td>
+                <td>
+                    <textarea name="address" cols="5" rows="5" required></textarea>
+                </td>
                 </tr>
                 <tr>
                     <td>Declaration</td>
@@ -128,22 +148,30 @@ p{
                     <td><input type="text" class="sign" name="user" required />
                     </td>
                 </tr>
-            </table> 
-        </form>
-            
-            <div class="button">
-                     <!-- <button><a href="./policy.html">submit</a></button> -->
-                       
-                        <!-- <button type="reset">Cancel</button>  reset type button refresh the added values-->
-                       <div class="but"><button><a href="./index.html">Cancel</a></button></div> 
-                       <div class="but"><button type="submit">Submit</button></div> 
-                   
-                    </div>
-                    <p>Already have an account?<a href="./login.html">Login</a> to your account</p>
-                    <script>
-                        function saveInfn(){
-                            let name,password,email;
-                            name= 
-                        }
-                    </script>
+            </table>
+    </form>
+
+    <div class="button">
+        <!-- <button><a href="./policy.html">submit</a></button> -->
+
+        <!-- <button type="reset">Cancel</button>  reset type button refresh the added values-->
+        <div class="but"><button><a href="./index.html">Cancel</a></button></div>
+        <div class="but"><button obnclick="saveInfn()">Submit</button></div>
+
+    </div>
+    <p>Already have an account?<a href="./login.html">Login</a> to your account</p>
+    <script>
+        function saveInfn() {
+            alert("hi");
+        //     let name, password, email;
+        //     name = document.getElementById("name").value;
+        //     password = document.getElementById("password").value;
+        //     email = document.getElementById("email").value;
+        //     localStorage.setItem("name", name);
+        //     localStorage.setItem("password", password);
+        //     localStorage.setItem("email", email);
+        //
+         }
+
+    </script>
 </body>
