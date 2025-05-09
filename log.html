@@ -174,15 +174,32 @@
     <p>Already have an account?<a href="./login.html">Login</a> to your account</p>
     <script>
         function saveInfn() {
-            alert("hi");
-            //     let name, password, email;
-            //     name = document.getElementById("name").value;
-            //     password = document.getElementById("password").value;
-            //     email = document.getElementById("email").value;
-            //     localStorage.setItem("name", name);
-            //     localStorage.setItem("password", password);
-            //     localStorage.setItem("email", email);
-            //
+                let name, password, email;
+                name = document.getElementById("name").value;
+                password = document.getElementById("password").value;
+                email = document.getElementById("email").value;
+                // after every new insertion new data replace with previous data
+                // localStorage.setItem("name", name);
+                // localStorage.setItem("password", password);
+                // localStorage.setItem("email", email);
+                // now we are creating array to keep every entries in the local storage
+                let user_records=new Array();//parse convert object to string.
+                user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+                if(user_records.some((v)=>{
+                    return v.email==email
+                })){
+                    alert("Duplicate Data")
+                }
+                else{
+                    user_records.push({
+                 "name":name,
+                 "email":email,
+                 "password":password
+                    })
+                    localStorage.setItem("users",JSON.stringify(user_records));//stringify convert string to object.
+                }
+
+            
         }
 
     </script>
