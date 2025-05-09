@@ -7,9 +7,16 @@
     <title>Insurance Management System</title>
     <script defer src="https://kit.fontawesome.com/dd7cfdc45a.js" crossorigin="anonymous"></script>
     <style>
-        body{
+        body {
             background-image: url("./photos/pic31.jpg");
-            background-position: top;
+            background-size: cover;
+            /* Ensures the image covers the entire viewport */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents image repetition */
+            background-attachment: fixed;
+            /* Keeps the image fixed while scrolling */
         }
 
         h1 {
@@ -91,22 +98,23 @@
     </style>
 
 <body>
-<div id="container">
-    <h1>Insurance Management System</h1>
-    <p class="contact"> <i class="fa-solid fa-phone"></i> Contact us @ 2345678 | 9123456780</p>
-    <div id="header">
-        <ul> <!-- always create menu bar using ul/ol-->
-            <li><i class="fa-solid fa-envelope-open-text"></i><a href="./log.html"> Signup</a></li>
-            <li><i class="fa-solid fa-user-plus"></i><a href="./login.html"> Login</a></li>
-            <li><i class="fa-solid fa-circle-user"></i><a href="./policyDetails.html"> Details</a></li>
-            <li><i class="fa-solid fa-house"></i><a href="./plansTypes.html"> View Plans</a></li>
-            <li><i class="fa-solid fa-person-circle-exclamation"></i><a href="#"> Logout</a></li>
-        </ul>
-    </div>
+    <div id="container">
+        <h1>Insurance Management System</h1>
+        <p class="contact"> <i class="fa-solid fa-phone"></i> Contact us @ 2345678 | 9123456780</p>
+        <div id="header">
+            <ul> <!-- always create menu bar using ul/ol-->
+                <li><i class="fa-solid fa-envelope-open-text"></i><a href="./log.html"> Signup</a></li>
+                <li><i class="fa-solid fa-user-plus"></i><a href="./login.html"> Login</a></li>
+                <li><i class="fa-solid fa-circle-user"></i><a href="./policyDetails.html"> Details</a></li>
+                <li><i class="fa-solid fa-house"></i><a href="./plansTypes.html"> View Plans</a></li>
+                <li><i class="fa-solid fa-person-circle-exclamation"></i><a href="#"> Logout</a></li>
+            </ul>
+        </div>
 
-    <div id="submit">
-        <a href="./index.html"><button>Cancel</button></a>
-        <a href="./log.html"><button>Login</button></a>    </div>
+        <div id="submit">
+            <a href="./index.html"><button>Cancel</button></a>
+            <a href="./log.html"><button>Login</button></a>
+        </div>
 
     </div>
 </body>
