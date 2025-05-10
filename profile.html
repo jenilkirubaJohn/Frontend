@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <style>
+        h2,h3,h4{
+            text-align: center;
+        }
+        .container button{
+           display: block;
+           margin: 20px auto;
+        }
+       
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="card">
             <h2>PROFILE</h2>
-            <button onclick="logout">Logout</button>
+            <button onclick="logout()">Logout</button>
+            <br>
+            <h3>Welcome</h3>
+            <h4>Name:
+            <script>
+                document.write(localStorage.getItem("name"));
+            </script>
+            </h4>
         </div>
     </div>
 </body>
