@@ -183,6 +183,10 @@
                 // localStorage.setItem("password", password);
                 // localStorage.setItem("email", email);
                 // now we are creating array to keep every entries in the local storage
+                if (name.trim() === "" || password.trim() === "" || email.trim() === "") {
+        alert("Please fill in all required fields.");
+        return; // Stop execution if fields are empty
+    }
                 let user_records=new Array();//parse convert object to string.
                 user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
                 if(user_records.some((v)=>{
