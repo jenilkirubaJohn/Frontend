@@ -19,7 +19,7 @@
     <div class="container">
         <div class="card">
             <h2>PROFILE</h2>
-            <button onclick="logout()">Logout</button>
+            <button onclick="logOut()">Logout</button>
             <br>
             <h3>Welcome</h3>
             <h4>Name:
@@ -27,7 +27,19 @@
                 document.write(localStorage.getItem("name"));
             </script>
             </h4>
+            <h4>Your Email is:
+                <script>
+                     document.write(localStorage.getItem("email"));
+                </script>
+            </h4>
         </div>
     </div>
 </body>
+<script>
+    function logOut(){
+        localStorage.removeItem("name");
+         localStorage.removeItem("email");
+         window.location.href="policyDetails.html"
+    }
+</script>
 </html>

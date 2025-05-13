@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Premium Payment</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Policy Application</h2>
+        <label for="email">Enter Email:</label>
+        <input type="text" id="email" placeholder="Enter Valid Email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter Login Password">
+
+        <button onclick="loadUserData()">Payment</button>
+        <label for="number">Annual Premium Payment:</label>
+        <input type="number" id="number">
+
+        <button>Pay</button>
+
+         <label for="number">Total Amount Paid:</label>
+        <input type="number" id="number">
+
+         <label for="number">Balance Amount:</label>
+        <input type="number" id="bamount">
+
+        <label for="date">Next Due Date:</label>
+        <input type="date">
+    </div>
+    <script>
+                function loadUserData() {
+            let storedEmail = localStorage.getItem("mail");
+            let storedPassword = localStorage.getItem("pword");
+
+            if (storedEmail && storedPassword) {
+                document.getElementById("email").value = storedEmail;
+                document.getElementById("password").value = storedPassword;
+            } else {
+                alert("No valid login found. Please enter your credentials manually.");
+            }
+        }
+
+        function validateLogin() {
+            let enteredEmail = document.getElementById("email").value.trim();
+            let enteredPassword = document.getElementById("password").value.trim();
+
+            // Ensure proper retrieval of stored values
+            let storedEmail = localStorage.getItem("mail") ? localStorage.getItem("mail").trim() : "";
+            let storedPassword = localStorage.getItem("pword") ? localStorage.getItem("pword").trim() : "";
+
+            console.log("Entered Email:", enteredEmail);
+            console.log("Stored Email:", storedEmail);
+            console.log("Entered Password:", enteredPassword);
+            console.log("Stored Password:", storedPassword);
+
+            // Corrected validation logic
+            if (enteredEmail === storedEmail) {
+                if (enteredPassword === storedPassword) {
+                    alert("Login successful!");
+                } else {
+                    alert("Invalid password.");
+                }
+            } else {
+                alert("Invalid email.");
+            }
+        }
+ </script>
+</body>
+
+</html>
+
+
+       

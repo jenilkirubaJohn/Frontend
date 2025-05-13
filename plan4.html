@@ -11,9 +11,21 @@
         crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
+        body {
+            background-image: url("photos/pic34.jpg");
+            background-size: cover;
+            /* Ensures the image covers the entire viewport */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents image repeatition */
+            background-attachment: fixed;
+            /* Keeps the image fixed while scrolling */
+        }
         h1 {
             text-align: center;
             margin-bottom: 40px;
+            color: #17031c;
         }
 
         .mainDiv {
@@ -35,13 +47,14 @@
         .sub,.sub1,.sub2,.sub3,.sub4 {
             width: 310px;
             height: 200px;
-            border: 4px solid black;
+            border: 4px solid #475325;
             font-family: 'Times New Roman', Times, serif;
             border-radius: 10px;
             padding: 1px;
             text-align: center;
             font-size: 18px;
             font-weight: bold;
+            color: #475325;
         }
         .sub1,.sub2,.sub3,.sub4{
             display: block;
@@ -57,7 +70,7 @@
             margin-bottom: 5px;
             float: left;
             padding: 2px;
-            border: 2px solid black;
+            border: 2px solid #475325;
             border-radius: 5px;
             font-size: 10px;
         }
@@ -67,6 +80,11 @@
             /* margin-top: 50px; */
             border-radius: 5px;
             font-family: 'Times New Roman', Times, serif;
+            color: #475325;
+            background-color: #fad4a2;
+        }
+        .subb button:hover{
+            background-color: #add2ff;
         }
     </style>
 </head>
